@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>虚拟键盘</title>
+ 
+</head>
+<body>
+    <input type="text" id="txt" value="aa" width="300px"  />
+    <input type="text" id="inputArea" value="aa" onblur="fnBlur()" onchange="fnOnchange()"/>
+    <input type="button" onclick="fnClick()" value=" aaaa " />
+
+    <script>
+
+        var a;
+        a = "";
+        var kbKbn;
+        kbKbn = false;
+
+        function fnBlur(){
+            a = a + "fnBlur|";
+
+            setTimeout(function () {
+                if (kbKbn == false) {
+                    alert("update");
+                    
+                }
+                kbKbn = false;
+            }, 200);
+        }
+
+
+        function fnClick() {
+            a = a + "fnClick|";
+            kbKbn = true;
+            document.getElementById("inputArea").value = document.getElementById("inputArea").value + "a";
+            document.getElementById("inputArea").focus();
+
+        }
+
+        function fnOnchange() {
+            a = a + "fnOnchange|";
+        }
+
+        function b(){
+            document.getElementById("txt").value = a;
+            setTimeout(function () { b(); }, 100);
+        }
+
+        b();
+
+    </script>
+</body>
+</html>

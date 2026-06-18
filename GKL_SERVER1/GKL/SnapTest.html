@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script language="javascript" type="text/javascript" src="./js/jquery-1.4.1.min.js"></script>
+    <script language="javascript" type="text/javascript" src="./t_check_ms.aspx.js?version=202006010503"></script>
+
+</head>
+<body>
+
+    <!--<input type="button" value="关闭" onclick="$('#kameira').hide()" />-->
+
+    <button id="snap" onclick="snap()">拍照</button>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <video id="video" width="800" height="600" autoplay></video>
+
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        var video = document.getElementById("video");
+
+        var kameraFlg;
+        kameraFlg = false;
+
+        function InitKamera() {
+            if (kameraFlg == false) {
+                videoObj = {
+                    "video": true
+                };
+                var errBack = function (error) {
+                    console.log("Video capture error: ", error.code);
+                };
+                if (navigator.getUserMedia) { // Standard
+                    navigator.getUserMedia(videoObj, function (stream) {
+                        video.srcObject = stream;
+                        video.play();
+                    }, errBack);
+                } else if (navigator.webkitGetUserMedia) { // WebKit-prefixed
+                    navigator.webkitGetUserMedia(videoObj, function (stream) {
+                        video.src = window.webkitURL.createObjectURL(stream);
+                        video.play();
+                    }, errBack);
+                } else if (navigator.mozGetUserMedia) { // Firefox-prefixed
+                    navigator.mozGetUserMedia(videoObj, function (stream) {
+                        video.src = window.URL.createObjectURL(stream);
+                        video.play();
+                    }, errBack);
+                };
+
+
+                kameraFlg = true;
+            }
+            ImgsInit();
+
+        }
+
+        $(document).ready(function () {
+            $(".kamera").show();
+            InitKamera();
+
+        });
+
+        function ImgsInit() {
+            $.ajax({
+                type: 'POST',
+                url: 'AJAX.aspx?kbn=get_chk_imgs',
+                async: true, //true:yibu
+                data: {
+                    chkNo_key: $("#hidChkNo").val(),
+                    line_id: $("#hidLineId").val(),
+                    chk_method_id: $("#hidChkMethodId").val()
+                },
+                datatype: 'html', //'xml', 'html', 'script', 'json', 'jsonp', 'text'.
+                beforeSend: function () { },
+                //when success
+                success: function (data) {
+                    //alert(data);
+                    var shtml = "";
+                    var arr;
+                    arr = data.split(",");
+                    var i;
+                    if (data != '') {
+                        for (i = 0; i <= arr.length - 1; i++) {
+                            shtml += '<li class="item_1"><img src="AJAX.aspx?kbn=show_chk_img&line_id=' + $("#hidLineId").val() + '&chkNo_key=' + $("#hidChkNo").val() + '&img_name=' + arr[i] + '" alt="">';
+                            shtml += ' <a href="#" onclick="DeleteImg(\'' + arr[i].replace(/\\/g, "\\\\") + '\')"  style="font-size:35px">删除</a> </li>';
+                        }
+                    }
+                    $("#div_imgs").html(shtml);
+
+                },
+                //when complete
+                complete: function (XMLHttpRequest, textStatus) {
+                },
+                //when error
+                error: function () { alert('图片上传错误'); }
+            });
+        }
+        function DeleteImg(img_name) {
+            $.ajax({
+                type: 'POST',
+                url: 'AJAX.aspx?kbn=DeleteImg',
+                async: true, //true:yibu
+                data: {
+                    chkNo_key: $("#hidChkNo").val(),
+                    line_id: $("#hidLineId").val(),
+                    chk_method_id: $("#hidChkMethodId").val(),
+                    img_name: img_name
+
+                },
+                datatype: 'html', //'xml', 'html', 'script', 'json', 'jsonp', 'text'.
+                beforeSend: function () { },
+                //when success
+                success: function (data) {
+                    ImgsInit();
+                },
+                //when complete
+                complete: function (XMLHttpRequest, textStatus) {
+                },
+                //when error
+                error: function () { alert('图片删除错误'); }
+            });
+        }
+
+
+        function snap() {
+            context.drawImage(video, 0, 0, 800, 600);
+            var img = canvas.toDataURL("image/jpeg", 0.92);
+            $.ajax({
+                type: 'POST',
+                url: 'AJAX.aspx?kbn=upd_img',
+                async: true, //true:yibu
+                data: {
+                    chkNo_key: $("#hidChkNo").val(),
+                    line_id: $("#hidLineId").val(),
+                    chk_method_id: $("#hidChkMethodId").val(),
+                    img: img.replace(/^data:image\/(png|jpg|jpeg);base64,/, "")
+
+                },
+                datatype: 'html', //'xml', 'html', 'script', 'json', 'jsonp', 'text'.
+                beforeSend: function () { },
+                //when success
+                success: function (data) {
+                    ImgsInit();
+                },
+                //when complete
+                complete: function (XMLHttpRequest, textStatus) {
+                },
+                //when error
+                error: function () { alert('图片上传错误'); }
+            });
+            return false;
+        }
+
+    </script>
+</body>
+</html>

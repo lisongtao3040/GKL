@@ -1,0 +1,178 @@
+﻿/**托盘关联*/
+.NEW_TP_DIV {
+    width: 1280px;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    background-color: #efefef;
+    color: #000;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 32px;
+    background-color: #e6e99b;
+    z-index: 100001;
+    padding: 10px;
+    display:none;
+}
+/**托盘修正*/
+.EDIT_TP_DIV {
+    width: 1280px;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    background-color: #efefef;
+    color: #000;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 32px;
+    background-color: #e6e99b;
+    z-index: 100001;
+    padding: 10px;
+    display: none;
+}
+
+.close_btn {
+    width: 250px;
+    height: 60px;
+    font-size: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.title_txt {
+    font-size: 50px;
+}
+
+.tp_barcode {
+    width: 200px;
+    height: 50px;
+    font-size: 40px;
+}
+
+    .tp_barcode:focus {
+        width: 200px;
+        height: 50px;
+        font-size: 40px;
+    }
+
+.baogong_panel {
+    width: 1280px;
+    height: 90%;
+    position: absolute;
+    left: 0;
+    top: 140px;
+    background-color: #efefef;
+    color: #000;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 32px;
+    background-color: #e6e99b;
+    display: none;
+}
+
+.baogong_panel_data {
+    width: 100%;
+}
+
+    .baogong_panel_data table {
+        width: 100%;
+    }
+
+        .baogong_panel_data table td {
+            word-break: break-all;
+            border: 1px solid #ccc;
+        }
+
+        .baogong_panel_data table th {
+            word-break: break-all;
+            border: 1px solid #ccc;
+            background-color: #ff6a00;
+        }
+
+.baogong_panel_title {
+    padding: 13px;
+}
+
+.tp_no_ipt {
+    width: 140px;
+    height: 40px;
+    font-size: 32px;
+}
+
+.tp_bar_scan {
+    border: 1px solid #333;
+    font-size: 32px;
+    width: 200px;
+    height: 40px;
+    text-align: right;
+    background-color:#ccc;
+}
+
+    .tp_bar_scan:focus {
+        border: 1px solid #333;
+        font-size: 32px;
+        width: 150px;
+        height: 40px;
+        text-align: right;
+    }
+
+.tp_in_suu {
+    border: 1px solid #333;
+    font-size: 32px;
+    width: 200px;
+    height: 40px;
+    text-align: right;
+}
+
+    .tp_in_suu:focus {
+        border: 3px solid #ff0000;
+        font-size: 32px;
+        width: 200px;
+        height: 40px;
+        text-align: right;
+    }
+
+
+.errorMsg {
+    color: red;
+}
+
+.greenMsg {
+    color: green;
+}
+
+#joinTp_scmx, #editTp, #acTp {
+    display:none;
+}
+/*托盘号*/
+.msBgTPNO {
+    font-size: 32px;
+    width: 200px;
+    height: 40px;
+    float:right;
+    margin:9px;
+}
+/*托盘号*/
+    .msBgTPNO:focus {
+        font-size: 32px;
+        width: 200px;
+        height: 40px;
+    }
+
+.bg_pl{
+
+}
+    .bg_pl td {
+        padding: 4px;
+        text-align: center;
+        font-size: 32px;
+    }
+
+    .greenBg{
+        background-color:green;
+    }
+.redBg {
+    background-color: red;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.windows.forms jitDebugging="true"/>
+  <startup>
+
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/>
+  </startup>
+  <appSettings>
+    <add key="connectionString" value="Data Source=10.160.192.114; Initial Catalog=GKL;Persist Security Info=True;User ID=sa;Password=ying+xian_2019"/>
+    <!--http://ab/GN_CHK/App/FmPrint/PrintLar.application?chk_id=20210626000816640-->
+    <!--<add key="PrintUrl" value="http://ab/GN_CHK/PrintQR.aspx"/>-->
+    <!--<add key="PrintUrl" value="http://10.160.192.114/GN_CHK/PrintQR.aspx"/>-->
+
+    <add key="PrintUrl" value="http://10.160.192.114/GKL2020/printLinesCodeRelationOne.aspx"/>
+  </appSettings>
+  <system.web>
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri=""/>
+      </providers>
+    </membership>
+    <roleManager enabled="true" defaultProvider="ClientRoleProvider">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400"/>
+      </providers>
+    </roleManager>
+  </system.web>
+</configuration>

@@ -1,0 +1,15 @@
+﻿body {
+    font-size:22px;
+}
+
+input{
+    font-size:22px;
+}
+
+#gvMainData th{
+    padding:4px;
+}
+
+#gvMainData td{
+    padding:4px;
+}

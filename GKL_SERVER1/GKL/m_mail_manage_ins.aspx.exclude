@@ -1,0 +1,55 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="m_mail_manage_ins.aspx.vb" Inherits="m_mail_manage_ins" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="m_mail_manage_ins.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Label ID="Label1" runat="server" Text="Email情报登录"></asp:Label>
+        </div>
+        <div>
+            <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
+        </div>
+        <table>
+            <tr>
+                <td>系：</td>
+                <td>
+                    <asp:TextBox ID="tbx_xi" runat="server"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td>线号：</td>
+                <td>
+                    <asp:TextBox ID="tbx_line_id" runat="server"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td>送信先：</td>
+                <td>
+                    <asp:TextBox ID="tbx_to_email" runat="server"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td>CC：</td>
+                <td>
+                    <asp:TextBox ID="tbx_cc_email" runat="server"></asp:TextBox></td>
+            </tr>
+            <tr style="visibility: hidden">
+                <td>送信时间：</td>
+                <td>
+                    <asp:DropDownList ID="ddl_send_email_time" runat="server" Enabled="false"></asp:DropDownList></td>
+            </tr>
+            <tr style="visibility: hidden">
+                <td>启动：</td>
+                <td>
+                    <asp:CheckBox ID="cb_qidong" runat="server" Checked="True" /></td>
+            </tr>
+        </table>
+        <asp:Button ID="btnInsert" runat="server" Text="追加" />
+        <asp:Button ID="btnBack" runat="server" Text="返回" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MachineData", "MachineData\MachineData.vbproj", "{0FC8E215-5E03-4D3C-952B-21A0A9943CA6}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MailData", "MailData\MailData.vbproj", "{2C1BC17B-40B6-4547-A56E-DA24E8BB2FD0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FC8E215-5E03-4D3C-952B-21A0A9943CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FC8E215-5E03-4D3C-952B-21A0A9943CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FC8E215-5E03-4D3C-952B-21A0A9943CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FC8E215-5E03-4D3C-952B-21A0A9943CA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C1BC17B-40B6-4547-A56E-DA24E8BB2FD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C1BC17B-40B6-4547-A56E-DA24E8BB2FD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C1BC17B-40B6-4547-A56E-DA24E8BB2FD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C1BC17B-40B6-4547-A56E-DA24E8BB2FD0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

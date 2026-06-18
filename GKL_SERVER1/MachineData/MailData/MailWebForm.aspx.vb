@@ -1,0 +1,224 @@
+﻿Imports System.Data
+
+Public Class MailWebForm
+    Inherits System.Web.UI.Page
+    Public updDA As New UpdDA
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim emailTime As String()
+
+        If Not IsPostBack Then
+            '送信时间dropdownlist初期化
+            emailTime = New String() {
+            "00:00", "00:30", "01:00", "01:30", "02:00", "02:30", "03:00", "03:30", "04:00", "04:30", "05:00", "05:30", "06:00", "06:30", "07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00", "23:30"}
+            ddl_send_email_time_upd.DataSource = emailTime
+            ddl_send_email_time_upd.DataBind()
+
+            Context.Items("line_id") = Me.tbx_line_id.Text
+            SearchDate()
+        Else
+            Me.tbx_line_id.Text = Context.Items("line_id")
+        End If
+    End Sub
+    Public Sub SearchDate()
+        Dim strLineID As String
+
+        strLineID = Me.tbx_line_id.Text
+        Me.lblMessage.Text = ""
+        Me.pnlUpd.Visible = False
+        Dim mainDt As DataTable = updDA.GetMailData(strLineID)
+
+        If mainDt.Rows.Count > 0 Then
+            gvMainData.DataSource = mainDt
+            gvMainData.DataBind()
+            gvMainData.Visible = True
+        Else
+            gvMainData.Visible = False
+            Me.lblMessage.Text = "对象数据不存在！"
+        End If
+
+    End Sub
+    ''' <summary>
+    ''' 检索按钮按下
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Protected Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        SearchDate()
+    End Sub
+    ''' <summary>
+    ''' 追加按钮按下
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Protected Sub btnInsert_Click(sender As Object, e As EventArgs) Handles btnInsert.Click
+        Server.Transfer("InsertData.aspx")
+    End Sub
+    '''' <summary>
+    '''' 更新按钮按下
+    '''' </summary>
+    '''' <param name="sender"></param>
+    '''' <param name="e"></param>
+    'Protected Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+    '    Dim Cnt As Integer
+    '    Dim strLineID As String
+
+    '    Cnt = 0
+    '    For i As Integer = 0 To gvMainData.Rows.Count - 1
+    '        If CType(gvMainData.Rows(i).FindControl("cbx_sel"), CheckBox).Checked = True Then
+    '            strLineID = CType(gvMainData.Rows(i).FindControl("line_id"), Label).Text
+    '            Cnt = Cnt + 1
+    '            If Cnt > 1 Then
+    '                Me.lblMessage.Text = "更新的场合，只能选择1条数据！"
+    '                Return
+    '            End If
+    '        End If
+    '    Next
+
+    'End Sub
+
+    '''' <summary>
+    '''' 删除按钮按下
+    '''' </summary>
+    '''' <param name="sender"></param>
+    '''' <param name="e"></param>
+    'Protected Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+    '    Dim strLineID As String
+    '    Dim rtn As Integer
+    '    For i As Integer = 0 To gvMainData.Rows.Count - 1
+    '        If CType(gvMainData.Rows(i).FindControl("cbx_sel"), CheckBox).Checked = True Then
+    '            strLineID = CType(gvMainData.Rows(i).FindControl("line_id"), Label).Text
+    '            rtn = updDA.DelMailData(strLineID)
+    '        End If
+    '    Next
+    'End Sub
+
+
+    ''' <summary>
+    ''' 行删除处理
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Protected Sub gvMainData_RowDeleting(sender As Object, e As GridViewDeleteEventArgs) Handles gvMainData.RowDeleting
+        Dim rtn As Integer
+        Dim strLineID As Object = e.Keys("line_id")
+        rtn = updDA.DelMailData(strLineID)
+        If rtn >= 1 Then
+            Me.lblMessage.Text = "删除成功！"
+        Else
+            Me.lblMessage.Text = "删除失败！"
+        End If
+        SearchDate()
+    End Sub
+
+    ''' <summary>
+    ''' 行编辑处理
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Protected Sub gvMainData_RowEditng(sender As Object, e As GridViewEditEventArgs) Handles gvMainData.RowEditing
+        gvMainData.EditIndex = e.NewEditIndex
+        SearchDate()
+    End Sub
+
+    ''' <summary>
+    ''' 行编辑取消处理
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Protected Sub gvMainData_RowCancelingEdit(sender As Object, e As GridViewCancelEditEventArgs) Handles gvMainData.RowCancelingEdit
+        gvMainData.EditIndex = -1
+        SearchDate()
+    End Sub
+
+    ''' <summary>
+    ''' 行更新处理
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Protected Sub gvMainData_RowUpdating(sender As Object, e As GridViewUpdateEventArgs) Handles gvMainData.RowUpdating
+        'Dim newsValuesColl = e.NewValues
+
+        Me.pnlUpd.Visible = True
+        Me.lbl_line_id_upd.Text = e.Keys("line_id")
+
+        Dim mainDt As DataTable = updDA.GetMailData(e.Keys("line_id"))
+
+        If mainDt.Rows.Count > 0 Then
+
+            Me.tbx_xi_upd.Text = mainDt.Rows(0).Item(0).ToString.Trim
+
+            Me.tbx_to_email_upd.Text = mainDt.Rows(0).Item(2).ToString.Trim
+            Me.tbx_cc_email_upd.Text = mainDt.Rows(0).Item(3).ToString.Trim
+            Me.ddl_send_email_time_upd.SelectedValue = mainDt.Rows(0).Item(4).ToString.Trim
+            If mainDt.Rows(0).Item(5).ToString.Trim = "1" Then
+                Me.cb_qidong_upd.Checked = True
+            Else
+                Me.cb_qidong_upd.Checked = False
+            End If
+
+        End If
+
+    End Sub
+
+    Protected Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        Dim strXi As String
+        Dim strLineID As String
+        Dim strToEmail As String
+        Dim strCCEmail As String
+        Dim strSendEmailTime As String
+        Dim strQidong As String
+
+        strXi = Me.tbx_xi_upd.Text
+
+        strLineID = Me.lbl_line_id_upd.Text
+
+        strToEmail = Me.tbx_to_email_upd.Text
+        If String.IsNullOrEmpty(strToEmail) = False Then
+            If EmailAddressChecker(strToEmail) = False Then
+                Me.tbx_to_email_upd.Focus()
+                MsgBox("送信先的邮件不合法！")
+                Me.tbx_to_email_upd.Text = ""
+                Return
+            End If
+        End If
+
+        strCCEmail = Me.tbx_cc_email_upd.Text
+        If String.IsNullOrEmpty(strCCEmail) = False Then
+            If EmailAddressChecker(strCCEmail) = False Then
+                Me.tbx_cc_email_upd.Focus()
+                MsgBox("CC的邮件不合法！")
+                Me.tbx_cc_email_upd.Text = ""
+                Return
+            End If
+        End If
+
+        strSendEmailTime = Me.ddl_send_email_time_upd.SelectedValue
+
+        If Me.cb_qidong_upd.Checked = True Then
+            strQidong = "1"
+        Else
+            strQidong = "0"
+        End If
+
+        Dim rtn = updDA.UpdMailData(strXi, strLineID, strToEmail, strCCEmail, strSendEmailTime, strQidong)
+        If rtn >= 1 Then
+            Me.lblMessage.Text = "更新成功！"
+            gvMainData.EditIndex = -1
+            Me.pnlUpd.Visible = False
+            SearchDate()
+        Else
+            Me.lblMessage.Text = "更新失败！"
+        End If
+    End Sub
+
+    Function EmailAddressChecker(ByVal emailAddress As String) As Boolean
+        Dim regExPattern As String = "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b"
+        Dim emailAddressMatch As Match = Regex.Match(emailAddress, regExPattern)
+        If emailAddressMatch.Success Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+End Class

@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AviCapTest", "AviCapTest\AviCapTest.vcxproj", "{F855A5B8-ACF9-468D-8384-BB5CCA04CBC2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FrameGrabberTest", "FrameGrabberTest\FrameGrabberTest.vcxproj", "{6F08C95A-53AB-4922-B58D-0F76350ED4AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		Template|Win32 = Template|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F855A5B8-ACF9-468D-8384-BB5CCA04CBC2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F855A5B8-ACF9-468D-8384-BB5CCA04CBC2}.Debug|Win32.Build.0 = Debug|Win32
+		{F855A5B8-ACF9-468D-8384-BB5CCA04CBC2}.Release|Win32.ActiveCfg = Release|Win32
+		{F855A5B8-ACF9-468D-8384-BB5CCA04CBC2}.Release|Win32.Build.0 = Release|Win32
+		{F855A5B8-ACF9-468D-8384-BB5CCA04CBC2}.Template|Win32.ActiveCfg = Release|Win32
+		{F855A5B8-ACF9-468D-8384-BB5CCA04CBC2}.Template|Win32.Build.0 = Release|Win32
+		{6F08C95A-53AB-4922-B58D-0F76350ED4AD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6F08C95A-53AB-4922-B58D-0F76350ED4AD}.Debug|Win32.Build.0 = Debug|Win32
+		{6F08C95A-53AB-4922-B58D-0F76350ED4AD}.Release|Win32.ActiveCfg = Release|Win32
+		{6F08C95A-53AB-4922-B58D-0F76350ED4AD}.Release|Win32.Build.0 = Release|Win32
+		{6F08C95A-53AB-4922-B58D-0F76350ED4AD}.Template|Win32.ActiveCfg = Template|Win32
+		{6F08C95A-53AB-4922-B58D-0F76350ED4AD}.Template|Win32.Build.0 = Template|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

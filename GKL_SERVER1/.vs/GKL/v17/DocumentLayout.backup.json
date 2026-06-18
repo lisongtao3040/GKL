@@ -1,0 +1,159 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7BA42712-BA62-462F-B68C-474C032ECAF8}|http://localhost:60669|D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\gkl\\t_check_ms.aspx.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{7BA42712-BA62-462F-B68C-474C032ECAF8}|http://localhost:60669|solutionrelative:gkl\\t_check_ms.aspx.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BA42712-BA62-462F-B68C-474C032ECAF8}|http://localhost:60669|D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\gkl\\t_check_ms.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{7BA42712-BA62-462F-B68C-474C032ECAF8}|http://localhost:60669|solutionrelative:gkl\\t_check_ms.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BA42712-BA62-462F-B68C-474C032ECAF8}|http://localhost:60669|d:\\gitee\\gkl-gitee\\gkl_server1\\gkl\\t_check_msfortpandbg.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{7BA42712-BA62-462F-B68C-474C032ECAF8}|http://localhost:60669|solutionrelative:gkl\\t_check_msfortpandbg.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BA42712-BA62-462F-B68C-474C032ECAF8}|http://localhost:60669|D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\gkl\\app_code\\bg.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{7BA42712-BA62-462F-B68C-474C032ECAF8}|http://localhost:60669|solutionrelative:gkl\\app_code\\bg.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BA42712-BA62-462F-B68C-474C032ECAF8}|http://localhost:60669|D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\gkl\\test_gettpxiangxian.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{7BA42712-BA62-462F-B68C-474C032ECAF8}|http://localhost:60669|solutionrelative:gkl\\test_gettpxiangxian.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BA42712-BA62-462F-B68C-474C032ECAF8}|http://localhost:60669|D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\gkl\\test_gettpxiangxian.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{7BA42712-BA62-462F-B68C-474C032ECAF8}|http://localhost:60669|solutionrelative:gkl\\test_gettpxiangxian.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BA42712-BA62-462F-B68C-474C032ECAF8}|http://localhost:60669|D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\gkl\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{7BA42712-BA62-462F-B68C-474C032ECAF8}|http://localhost:60669|solutionrelative:gkl\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Test_GetTpXiangxian.aspx.vb",
+              "DocumentMoniker": "D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\GKL\\Test_GetTpXiangxian.aspx.vb",
+              "RelativeDocumentMoniker": "GKL\\Test_GetTpXiangxian.aspx.vb",
+              "ToolTip": "D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\GKL\\Test_GetTpXiangxian.aspx.vb",
+              "RelativeToolTip": "GKL\\Test_GetTpXiangxian.aspx.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-11-21T02:23:17.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Test_GetTpXiangxian.aspx",
+              "DocumentMoniker": "D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\GKL\\Test_GetTpXiangxian.aspx",
+              "RelativeDocumentMoniker": "GKL\\Test_GetTpXiangxian.aspx",
+              "ToolTip": "D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\GKL\\Test_GetTpXiangxian.aspx",
+              "RelativeToolTip": "GKL\\Test_GetTpXiangxian.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-21T02:23:13.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Bg.vb",
+              "DocumentMoniker": "D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\GKL\\App_Code\\Bg.vb",
+              "RelativeDocumentMoniker": "GKL\\App_Code\\Bg.vb",
+              "ToolTip": "D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\GKL\\App_Code\\Bg.vb",
+              "RelativeToolTip": "GKL\\App_Code\\Bg.vb",
+              "ViewState": "AgIAAA4BAAAAAAAAAAAjwBwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-11-21T02:19:54.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "t_check_ms.aspx",
+              "DocumentMoniker": "D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\GKL\\t_check_ms.aspx",
+              "RelativeDocumentMoniker": "GKL\\t_check_ms.aspx",
+              "ToolTip": "D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\GKL\\t_check_ms.aspx",
+              "RelativeToolTip": "GKL\\t_check_ms.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-21T02:17:26.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "t_check_ms.aspx.js",
+              "DocumentMoniker": "D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\GKL\\t_check_ms.aspx.js",
+              "RelativeDocumentMoniker": "GKL\\t_check_ms.aspx.js",
+              "ToolTip": "D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\GKL\\t_check_ms.aspx.js",
+              "RelativeToolTip": "GKL\\t_check_ms.aspx.js",
+              "ViewState": "AgIAAA4EAAAAAAAAAADwvxoEAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-21T02:17:23.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "t_check_msForTpAndBg.js",
+              "DocumentMoniker": "D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\GKL\\t_check_msForTpAndBg.js",
+              "RelativeDocumentMoniker": "GKL\\t_check_msForTpAndBg.js",
+              "ToolTip": "D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\GKL\\t_check_msForTpAndBg.js",
+              "RelativeToolTip": "GKL\\t_check_msForTpAndBg.js",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwCsAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-21T02:17:15.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\GKL\\Web.config",
+              "RelativeDocumentMoniker": "GKL\\Web.config",
+              "ToolTip": "D:\\Gitee\\GKL-GITEE\\GKL_SERVER1\\GKL\\Web.config",
+              "RelativeToolTip": "GKL\\Web.config",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACAAAACgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-11-18T02:43:25.395Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

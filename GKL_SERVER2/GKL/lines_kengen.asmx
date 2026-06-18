@@ -1,0 +1,1 @@
+<%@ WebService Language="VB" CodeBehind="~/App_Code/lines_kengen.vb" Class="lines_kengen" %>

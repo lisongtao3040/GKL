@@ -1,0 +1,12 @@
+﻿t_cd_temp_relation_junbi
+t_cd_temp_relation
+追加 color_nm varchar 50
+检查方法追加
+312D00005	颜色	1	{color}	扫码颜色信息与治具ID一致
+
+模板MS 对应的模板 第一行颜色： 治具ID 不需要 ，
+
+
+chk_formula="{color}"
+
+312A00001

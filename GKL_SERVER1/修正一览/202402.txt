@@ -1,0 +1,57 @@
+SELECT [user_cd]
+      ,[line_id]
+      ,[user_name]
+      ,[user_password]
+      ,[ins_user]
+      ,[ins_date]
+      ,[upd_user]
+      ,[upd_date]
+INTO [m_user_bk]
+FROM [m_user];
+
+drop table [m_user];
+
+CREATE TABLE [dbo].[m_user](
+	[user_cd] [varchar](10) NOT NULL,
+	[line_id] [varchar](10) NULL,
+	[user_name] [nvarchar](20) NULL,
+	[user_password] [varchar](20) NULL,
+	[kengen] [char](1) NULL,
+	[ins_user] [varchar](20) NULL,
+	[ins_date] [datetime] NULL,
+	[upd_user] [varchar](20) NULL,
+	[upd_date] [datetime] NULL,
+ CONSTRAINT [PK_m_user] PRIMARY KEY CLUSTERED 
+(
+	[user_cd] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+;
+
+insert into [m_user]
+SELECT [user_cd]
+      ,[line_id]
+      ,[user_name]
+      ,[user_password]
+	  ,'1'
+      ,[ins_user]
+      ,[ins_date]
+      ,[upd_user]
+      ,[upd_date]
+FROM [m_user_bk]
+;
+
+[m_baogong_ms_new] ’Ç‰Á [bg_bar_data] Žš’i
+
+
+-----------------------------------------------------
+MUserDA.vb
+MUserBC.vb
+_Default.vb
+
+Cparam.vb
+
+
+
+
+

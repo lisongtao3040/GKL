@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Tyouhyou.exe" version="1.0.0.55" publicKeyToken="402a37642557191c" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="20160308035940197.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Tyouhyou" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Tyouhyou.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet class="System.Security.PermissionSet" version="1" ID="Custom" SameSite="site" Unrestricted="true" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC マニフェスト オプション
+            Windows のユーザー アカウント制御のレベルを変更するには、
+            requestedExecutionLevel ノードを以下のいずれかで置換します。
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            requestedExecutionLevel ノードを指定すると、ファイルおよびレジストリの仮想化は無効になります。
+            旧バージョンとの互換性のためにファイルおよびレジストリの仮想化を
+            使用する場合は、requestedExecutionLevel ノードを削除します。
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tyouhyou.exe" size="61840">
+      <assemblyIdentity name="Tyouhyou" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>mEg+/BuAeFUNqnu9LsbuxjlTNB0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="20160308035940197.ico" size="16958">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ZSwDSBvd4TIFycs/wy4FMsx1VyA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Tyouhyou.exe.config" size="1784">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>66OO6p4OdXO/LeT9OAWMMknKmVI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Tyouhyou.xlsm.exe" size="1026550">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>U7O0X9rFftbT0c/sF8K7kj+DvZ4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!--このアプリケーションが動作するように設計されている、Windows のすべてのバージョンの一覧。
+      Windows は最も互換性の高い環境を自動的に選択します。-->
+      <!--アプリケーションが Windows Vista で動作するように設計されている場合は、次の supportedOS ノードのコメントを解除します-->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}"></supportedOS>-->
+      <!-- アプリケーションが Windows 7 で動作するように設計されている場合は、次の supportedOS ノードのコメントを解除してください-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+      <!--アプリケーションが Windows 8 で動作するように設計されている場合は、次の supportedOS ノードのコメントを解除します-->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"></supportedOS>-->
+      <!-- アプリケーションが Windows 8.1 で動作するように設計されている場合は、次の supportedOS ノードのコメントを解除してください-->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=LIXIL\11043787" issuerKeyHash="0ce4486b30d616daf942372e516dae98493735e4" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>afIgLlJVQXkxAQ1dgqowC32AG3A=</DigestValue></Reference></SignedInfo><SignatureValue>L3SK8cCj1HyX8Lxp7TAQqrM8rRcjGDFWedX1fi0l5F1nsdNAjtu/KSmYzK6OagG+e5kVBNYXljU006InTyPuGuq5yC2ij1MXigTMrAakD8fVntXTX6twQyBqN68RhFMm8t5y0SG4QvgQRZ9HROT08ZEYnRSPMLCgVkjRn94mPYM=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>xu65erqTinK/q3O3XoxKPB2PAtJaGfjftXdqDANiZ4pUlgknJngauFBFQCrXTw/oQNjwnaEybXHAFjJ5ZHtiWzClKrisb/dWCuAPaXuC3g4hkfHPmT4sGFOPTq6INqyY+NjNYXFpu6LAZaeUEO7nOWv9NpKZU4TxM8Bo8nTmgLk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="701b807d0b30aa825d0d0131794155522e20f269" Description="" Url=""><as:assemblyIdentity name="Tyouhyou.exe" version="1.0.0.55" publicKeyToken="402a37642557191c" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=LIXIL\11043787</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>AR24e3zP1DeUS7u5p+mnhkcrY+w=</DigestValue></Reference></SignedInfo><SignatureValue>Q3r/ba26SYpybvuAxKxtKJ7R4YCwoZZWeRUr8lhj/AHIZ1sBlVI0amfi48YrZQKWCVyH60DxFGmTn04cKlRCKcdRY9krWyHT5djVmzOAEdJWqyjXxOSBwnoHoNQ8krGQS+2bIygiGMjsBMrD5mU0sU+uDFHuU+wjFD/ZDF76A34=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>xu65erqTinK/q3O3XoxKPB2PAtJaGfjftXdqDANiZ4pUlgknJngauFBFQCrXTw/oQNjwnaEybXHAFjJ5ZHtiWzClKrisb/dWCuAPaXuC3g4hkfHPmT4sGFOPTq6INqyY+NjNYXFpu6LAZaeUEO7nOWv9NpKZU4TxM8Bo8nTmgLk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQN+Qqa2fWCLNFsLUJvW8PODANBgkqhkiG9w0BAQUFADAnMSUwIwYDVQQDHhwATABJAFgASQBMAFwAMQAxADAANAAzADcAOAA3MB4XDTIzMDQyMzA4NDYwNVoXDTI0MDQyMjE0NDYwNVowJzElMCMGA1UEAx4cAEwASQBYAEkATABcADEAMQAwADQAMwA3ADgANzCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAxu65erqTinK/q3O3XoxKPB2PAtJaGfjftXdqDANiZ4pUlgknJngauFBFQCrXTw/oQNjwnaEybXHAFjJ5ZHtiWzClKrisb/dWCuAPaXuC3g4hkfHPmT4sGFOPTq6INqyY+NjNYXFpu6LAZaeUEO7nOWv9NpKZU4TxM8Bo8nTmgLkCAwEAATANBgkqhkiG9w0BAQUFAAOBgQBPsHEd5x6Z/05K3td5bs+UzpXJ7i1bNGAAGIzUg9n2OUPFELGBD1aLfhKTrv6E2JxecWgj7orvcmxrkBC0eQYw7qvwqgQ6mPy6wqzHk8+DUOG4P3+xigq3zSZM2O1ov4wNVlCuTZ6PBAEQKSWFA1Z+xvUFH+yoZomv8522Gme44w==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

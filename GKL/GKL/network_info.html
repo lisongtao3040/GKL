@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网络信息检测</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .info-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 4px solid #28a745;
+        }
+        .info-item h3 {
+            margin: 0 0 5px 0;
+            color: #495057;
+        }
+        .info-item p {
+            margin: 0;
+            word-break: break-all;
+        }
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .loading {
+            color: #6c757d;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>网络信息检测</h1>
+        
+        <div class="note">
+            <strong>注意：</strong>由于浏览器安全限制，无法直接获取网卡MAC地址等硬件信息。以下是在浏览器环境中可获取的网络相关信息。
+        </div>
+        
+        <div id="networkResults"></div>
+    </div>
+
+    <script>
+        // 收集网络相关信息
+        async function collectNetworkInfo() {
+            const networkInfo = {};
+            
+            // 基本连接信息
+            networkInfo.onLine = navigator.onLine;
+            networkInfo.connection = navigator.connection ? {
+                effectiveType: navigator.connection.effectiveType,
+                downlink: navigator.connection.downlink + ' Mbps',
+                rtt: navigator.connection.rtt + ' ms',
+                saveData: navigator.connection.saveData
+            } : 'Network Information API 不支持';
+            
+            // 获取公网IP地址
+            networkInfo.publicIP = await getPublicIP();
+            
+            // 获取本地IP地址（通过WebRTC）
+            networkInfo.localIPs = await getLocalIPs();
+            
+            // 用户代理中的网络相关信息
+            networkInfo.userAgent = navigator.userAgent;
+            
+            // 语言和时区
+            networkInfo.language = navigator.language;
+            networkInfo.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            
+            return networkInfo;
+        }
+        
+        // 获取公网IP地址
+        async function getPublicIP() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                return data.ip;
+            } catch (error) {
+                try {
+                    // 备用API
+                    const response = await fetch('https://api64.ipify.org?format=json');
+                    const data = await response.json();
+                    return data.ip;
+                } catch (error2) {
+                    return '无法获取公网IP';
+                }
+            }
+        }
+        
+        // 获取本地IP地址（通过WebRTC）
+        async function getLocalIPs() {
+            return new Promise((resolve) => {
+                const localIPs = [];
+                
+                // WebRTC 获取本地IP
+                const RTCPeerConnection = window.RTCPeerConnection || 
+                                         window.mozRTCPeerConnection || 
+                                         window.webkitRTCPeerConnection;
+                
+                if (!RTCPeerConnection) {
+                    resolve(['WebRTC 不支持']);
+                    return;
+                }
+                
+                const pc = new RTCPeerConnection({iceServers: []});
+                
+                pc.createDataChannel('');
+                pc.createOffer().then(offer => pc.setLocalDescription(offer));
+                
+                pc.onicecandidate = (event) => {
+                    if (!event.candidate) {
+                        // 所有候选者收集完成
+                        if (localIPs.length === 0) {
+                            localIPs.push('无法获取本地IP');
+                        }
+                        resolve(localIPs);
+                        return;
+                    }
+                    
+                    const candidate = event.candidate.candidate;
+                    const regex = /([0-9]{1,3}(\.[0-9]{1,3}){3})/;
+                    const match = candidate.match(regex);
+                    
+                    if (match) {
+                        const ip = match[1];
+                        // 过滤掉重复的IP和公网IP
+                        if (!localIPs.includes(ip) && 
+                            !ip.startsWith('0.') && 
+                            !ip.startsWith('127.') &&
+                            !ip.startsWith('169.254.') &&
+                            !ip.startsWith('224.') &&
+                            !ip.startsWith('240.')) {
+                            localIPs.push(ip);
+                        }
+                    }
+                };
+                
+                // 超时处理
+                setTimeout(() => {
+                    if (localIPs.length === 0) {
+                        localIPs.push('获取超时');
+                    }
+                    resolve(localIPs);
+                }, 3000);
+            });
+        }
+        
+        // 显示网络信息
+        function displayNetworkInfo(networkInfo) {
+            const container = document.getElementById('networkResults');
+            
+            const sections = [
+                {
+                    title: '连接状态',
+                    items: [
+                        { label: '在线状态', value: networkInfo.onLine ? '在线' : '离线' },
+                        { label: '网络类型', value: typeof networkInfo.connection === 'object' ? 
+                            networkInfo.connection.effectiveType : networkInfo.connection },
+                        { label: '下行速度', value: typeof networkInfo.connection === 'object' ? 
+                            networkInfo.connection.downlink : '未知' },
+                        { label: '往返时间', value: typeof networkInfo.connection === 'object' ? 
+                            networkInfo.connection.rtt : '未知' },
+                        { label: '节省数据模式', value: typeof networkInfo.connection === 'object' ? 
+                            (networkInfo.connection.saveData ? '开启' : '关闭') : '未知' }
+                    ]
+                },
+                {
+                    title: 'IP地址信息',
+                    items: [
+                        { label: '公网IP地址', value: networkInfo.publicIP },
+                        { label: '本地IP地址', value: Array.isArray(networkInfo.localIPs) ? 
+                            networkInfo.localIPs.join(', ') : networkInfo.localIPs }
+                    ]
+                },
+                {
+                    title: '其他网络相关信息',
+                    items: [
+                        { label: '用户代理', value: networkInfo.userAgent },
+                        { label: '语言', value: networkInfo.language },
+                        { label: '时区', value: networkInfo.timezone }
+                    ]
+                }
+            ];
+            
+            sections.forEach(section => {
+                const sectionElement = document.createElement('div');
+                sectionElement.innerHTML = `<h2 style="color: #28a745; border-bottom: 2px solid #28a745; padding-bottom: 5px;">${section.title}</h2>`;
+                
+                section.items.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'info-item';
+                    itemElement.innerHTML = `
+                        <h3>${item.label}</h3>
+                        <p>${item.value}</p>
+                    `;
+                    sectionElement.appendChild(itemElement);
+                });
+                
+                container.appendChild(sectionElement);
+            });
+        }
+        
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', async function() {
+            const container = document.getElementById('networkResults');
+            container.innerHTML = '<div class="loading">正在收集网络信息...</div>';
+            
+            const networkInfo = await collectNetworkInfo();
+            container.innerHTML = '';
+            displayNetworkInfo(networkInfo);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="PictureImport.exe" version="1.0.0.25" publicKeyToken="05fd01bd0b7cce7d" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="20160308035940197.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="PictureImport" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="PictureImport.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC マニフェスト オプション
+          Windows のユーザー アカウント制御のレベルを変更するには、
+          requestedExecutionLevel ノードを以下のいずれかで置換します。
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         下位互換性を保つためにファイルおよびレジストリの仮想化を使用する場合、
+         requestedExecutionLevel ノードを削除します。
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Sentinel.v3.5Client" version="3.5.0.0" publicKeyToken="b03f5f7f11d50a3a" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PictureImport.exe" size="52224">
+      <assemblyIdentity name="PictureImport" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>VUlIhk1RBFSGaDode6bmpL5iuA4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="20160308035940197.ico" size="16958">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ZSwDSBvd4TIFycs/wy4FMsx1VyA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PictureImport.exe.config" size="1481">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>XSafd1FcWrenCL3PWsgd7pxBiHY=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=CHINA\lis6" issuerKeyHash="f78494852f1749de400a55eb100c23df4d3f965d" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>NQX+e2QmlEOQh8xljqARkbTkrAw=</DigestValue></Reference></SignedInfo><SignatureValue>qUSUURZkpVJhNIF/BS3GLi7VpdlL2DcFvIvbkTLI3BWUhAYoxgF5OFDsAUAFrnb0DFQPSfAzuK5Z+2fDDSAeEZl1JEHJ1zDH1p4zK9TQSaULbeRFz6bp8R5MrS0TuhXWSK6gp0eS/ftflDbZWSol4Re4+VFkCX9m+RWsnWn4HRs=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>sg+u9jHaQsvovujMV9dJNnXw6Wx7jC2Zw/VzC7TPsBDgTnT77ZGX3PdZZKY4zn6NR5hKdaXJ5E1hwk+fiykKEk8jn1DyhCTuxijm3I7stNU/pRYuFNoV2NwgOyzKm7YAIOOayF8g8jwdVitvVhlTrCEkzJJfyIvVhEHMPvNUdaM=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="0cace4b49111a08e65cc8790439426647bfe0535" Description="" Url=""><as:assemblyIdentity name="PictureImport.exe" version="1.0.0.25" publicKeyToken="05fd01bd0b7cce7d" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=CHINA\lis6</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>wjq5ULKYvlo2Bp6WJTPqyrqRrDc=</DigestValue></Reference></SignedInfo><SignatureValue>pGjA6XJzasL/85fqDR0fw+YUR0ZHFPhXVBySJM+wydO64YsPIZrQXGwNN2MWa+Wme3kVtcvfm6I8iJ98CYczDlC1dP2oMZJM2J7V/GXqxXGegycyyFgChU4zz4UmW02LwQpXPIRamEv65zklXIaHq58ikLZgnrXAtk6MthXa6p8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>sg+u9jHaQsvovujMV9dJNnXw6Wx7jC2Zw/VzC7TPsBDgTnT77ZGX3PdZZKY4zn6NR5hKdaXJ5E1hwk+fiykKEk8jn1DyhCTuxijm3I7stNU/pRYuFNoV2NwgOyzKm7YAIOOayF8g8jwdVitvVhlTrCEkzJJfyIvVhEHMPvNUdaM=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBwTCCASqgAwIBAgIQF7WwlpaBJpxEADptSg+1OTANBgkqhkiG9w0BAQUFADAfMR0wGwYDVQQDHhQAQwBIAEkATgBBAFwAbABpAHMANjAeFw0xOTAxMTgwMDMwNTRaFw0yMDAxMTgwNjMwNTRaMB8xHTAbBgNVBAMeFABDAEgASQBOAEEAXABsAGkAcwA2MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCyD672MdpCy+i+6MxX10k2dfDpbHuMLZnD9XMLtM+wEOBOdPvtkZfc91lkpjjOfo1HmEp1pcnkTWHCT5+LKQoSTyOfUPKEJO7GKObcjuy01T+lFi4U2hXY3CA7LMqbtgAg45rIXyDyPB1WK29WGVOsISTMkl/Ii9WEQcw+81R1owIDAQABMA0GCSqGSIb3DQEBBQUAA4GBAJpcYkn/2/ZFZA9SFfr05+XRuPG4YBX/bP/nmetlXVvmWVNs5WYz8KQb6EXny0wXloQIgdS6M9oSiFJe9pdKXdq2G8Jpa+2/hq2KJG3LghRbxvPdvpfVxqx1Mp/1hBowAx5TN7cDMQ4xCp4jp4OoshFOqm9wwHWz1bOWnqeAXf4F</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

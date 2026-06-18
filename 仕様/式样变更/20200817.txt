@@ -1,0 +1,88 @@
+
+select * into t_check_ms_bk from t_check_ms
+
+
+drop table t_check_ms
+
+CREATE TABLE [dbo].[t_check_ms](
+	[chk_no] [varchar](20) NOT NULL,
+	[chk_method_id] [varchar](10) NOT NULL,
+	[line_id] [varchar](10) NOT NULL,
+	[chk_flg] [varchar](1) NULL,
+	[in_1] [varchar](20) NULL,
+	[in_2] [varchar](20) NULL,
+	[chk_result] [varchar](20) NULL,
+	[mark] [varchar](200) NULL,
+	[kj_0] [varchar](100) NULL,
+	[kj_1] [varchar](20) NULL,
+	[kj_2] [varchar](20) NULL,
+	[kj_explain] [nvarchar](200) NULL,
+	[ins_user] [varchar](20) NULL,
+	[ins_date] [datetime] NULL,
+
+	[project_name] [nvarchar](50) NULL,
+	[pic_id] [varchar](10) NULL,
+	[pic_name] [nvarchar](200) NULL,
+	[chk_km_name] [nvarchar](200) NULL,
+	[chk_name] [nvarchar](50) NULL,
+	[tool_id] [varchar](40) NULL,
+	[pic_sign] [nvarchar](50) NULL,
+	[chk_id] [varchar](10) NULL,
+
+	[chk_method] [varchar](1) NULL,
+	[chk_formula] [nvarchar](200) NULL,
+	[verify_method_explain] [nvarchar](200) NULL,
+
+
+ CONSTRAINT [PK_t_check_ms] PRIMARY KEY CLUSTERED 
+(
+	[chk_no] ASC,
+	[chk_method_id] ASC,
+	[line_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+select t_check_ms_bk.[chk_no]
+      ,t_check_ms_bk.[chk_method_id]
+      ,t_check_ms_bk.[line_id]
+      ,t_check_ms_bk.[chk_flg]
+      ,t_check_ms_bk.[in_1]
+      ,t_check_ms_bk.[in_2]
+      ,t_check_ms_bk.[chk_result]
+      ,t_check_ms_bk.[mark]
+      ,t_check_ms_bk.[kj_0]
+      ,t_check_ms_bk.[kj_1]
+      ,t_check_ms_bk.[kj_2]
+      ,t_check_ms_bk.[kj_explain]
+      ,t_check_ms_bk.[ins_user]
+      ,t_check_ms_bk.[ins_date]
+      
+	,m_temp.[project_name] 
+	,m_temp.[pic_id] 
+	,m_temp.[pic_name] 
+	,m_temp.[chk_km_name] 
+	,m_temp.[chk_name] 
+	,m_temp.[tool_id] 
+	,m_temp.[pic_sign] 
+	,m_temp.[chk_id] 
+	,m_check_method.chk_method
+	,m_check_method.chk_formula
+	,ISNULL(m_tools.tool_name,m_check_method.verify_method_explain )
+
+from t_check_ms_bk  
+
+left join t_check_result
+	ON t_check_ms_bk.line_id = t_check_result.line_id
+	AND t_check_ms_bk.chk_no = t_check_result.chk_no
+	
+LEFT JOIN m_temp
+	ON t_check_ms_bk.chk_method_id = m_temp.chk_method_id
+	AND t_check_ms_bk.line_id = m_temp.line_id
+	AND t_check_result.temp_id = m_temp.temp_id
+	
+LEFT JOIN m_check_method
+ ON m_temp.chk_id = m_check_method.chk_id
+ 
+LEFT JOIN m_tools
+ ON m_temp.tool_id = m_tools.tool_id 
+ AND m_temp.line_id = m_tools.line_id 

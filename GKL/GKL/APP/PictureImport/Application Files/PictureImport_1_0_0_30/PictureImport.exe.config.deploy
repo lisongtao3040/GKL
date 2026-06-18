@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <startup>
+    
+  <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/></startup>
+  <appSettings>
+    <!--<add key="connectionString" value="Data Source=WIN7U-20150705K\R2; Initial Catalog=GKL;Persist Security Info=True;User ID=sa;Password=1983313a"/>-->
+    <!--<add key="connectionString" value="Data Source=10.160.200.39; Initial Catalog=GKL;Persist Security Info=True;User ID=sa;Password=lixil@2014"/>-->
+    <!--本番用-->
+    <add key="connectionString" value="Data Source=10.160.192.114; Initial Catalog=GKL;Persist Security Info=True;User ID=sa;Password=sa"/>
+    <!--本番用 2号服务器-->
+    <!--<add key="connectionString" value="Data Source=DLTDLFSDB004; Initial Catalog=GKL;Persist Security Info=True;User ID=sa;Password=xxp+2104;"/>-->
+    <add key="ClientSettingsProvider.ServiceUri" value=""/>
+  </appSettings>
+  <system.web>
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri=""/>
+      </providers>
+    </membership>
+    <roleManager defaultProvider="ClientRoleProvider" enabled="true">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400"/>
+      </providers>
+    </roleManager>
+  </system.web>
+</configuration>

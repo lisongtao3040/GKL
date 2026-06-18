@@ -1,0 +1,110 @@
+﻿
+Partial Class m_mail_manage_ins
+    Inherits System.Web.UI.Page
+    Public updDA As New m_email_kanriDA
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim emailTime As String()
+
+        If Not IsPostBack Then
+            '送信时间dropdownlist初期化
+            emailTime = New String() {
+            "00:00", "00:30", "01:00", "01:30", "02:00", "02:30", "03:00", "03:30", "04:00", "04:30", "05:00", "05:30", "06:00", "06:30", "07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00", "23:30"}
+            ddl_send_email_time.DataSource = emailTime
+            ddl_send_email_time.DataBind()
+
+            Context.Items("send_email_time") = Me.ddl_send_email_time.SelectedValue
+
+        Else
+
+            'Me.tbx_xi.Text = Context.Items("xi")
+            'Me.tbx_line_id.Text = Context.Items("line_id")
+            'Me.tbx_to_email.Text = Context.Items("to_email")
+            'Me.tbx_cc_email.Text = Context.Items("cc_email")
+            'Me.ddl_send_email_time.SelectedValue = Context.Items("send_email_time")
+
+            'If Context.Items("qidong") = "1" Then
+            '    Me.cb_qidong.Checked = True
+            'Else
+            '    Me.cb_qidong.Checked = False
+            'End If
+        End If
+
+    End Sub
+    ''' <summary>
+    ''' 追加按钮按下
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Protected Sub btnInsert_Click(sender As Object, e As EventArgs) Handles btnInsert.Click
+        Dim strXi As String
+        Dim strLineID As String
+        Dim strToEmail As String
+        Dim strCCEmail As String
+        Dim strSendEmailTime As String
+        Dim strQidong As String
+
+        Context.Items("xi") = Me.tbx_xi.Text
+        Context.Items("line_id") = Me.tbx_line_id.Text
+        Context.Items("to_email") = Me.tbx_to_email.Text
+        Context.Items("cc_email") = Me.tbx_cc_email.Text
+        'Context.Items("send_email_time") = Me.ddl_send_email_time.SelectedValue
+        'Context.Items("qidong") = Me.cb_qidong.Checked
+        Context.Items("send_email_time") = "07:00"
+        Context.Items("qidong") = "1"
+        strXi = Me.tbx_xi.Text
+
+        strLineID = Me.tbx_line_id.Text
+        If strLineID = "" Then
+            Me.tbx_line_id.Focus()
+            lblMessage.Text = ("线号未入力！")
+            Return
+        End If
+
+        strToEmail = Me.tbx_to_email.Text
+        If String.IsNullOrEmpty(strToEmail) = False Then
+            If EmailAddressChecker(strToEmail) = False Then
+                Me.tbx_to_email.Focus()
+                lblMessage.Text = ("送信先的邮件不合法！")
+                Me.tbx_to_email.Text = ""
+                Return
+            End If
+        End If
+
+        strCCEmail = Me.tbx_cc_email.Text
+        If String.IsNullOrEmpty(strCCEmail) = False Then
+            If EmailAddressChecker(strCCEmail) = False Then
+                Me.tbx_cc_email.Focus()
+                lblMessage.Text = ("CC的邮件不合法！")
+                Me.tbx_cc_email.Text = ""
+                Return
+            End If
+        End If
+
+        strSendEmailTime = Me.ddl_send_email_time.SelectedValue
+
+        'If Me.cb_qidong.Checked = True Then
+        '    strQidong = "1"
+        'Else
+        '    strQidong = "0"
+        'End If
+
+        strQidong = "1"
+
+        Dim rtn As Integer = updDA.InsMailData(strXi, strLineID, strToEmail, strCCEmail, strSendEmailTime, strQidong)
+        Server.Transfer("m_mail_manage.aspx")
+    End Sub
+
+    Function EmailAddressChecker(ByVal emailAddress As String) As Boolean
+        Dim regExPattern As String = "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b"
+        Dim emailAddressMatch As Match = Regex.Match(emailAddress, regExPattern)
+        If emailAddressMatch.Success Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Protected Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        Server.Transfer("m_mail_manage.aspx")
+    End Sub
+End Class

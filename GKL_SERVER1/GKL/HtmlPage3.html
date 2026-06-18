@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <script language="javascript" type="text/javascript" src="./js/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" src="./Common.js"></script>
+    <script>
+        //共通AJAX 呼出函数
+        //function WebMethod(asmxName, functionName, param) {
+        //    var rtv;
+        //    $.ajaxSetup({ cache: false });
+        //    $.ajax({
+        //        type: "POST",
+        //        url: asmxName + ".asmx/" + functionName,
+        //        contentType: "application/json;charset=utf-8",
+        //        async: false,//使用同步的方式,true为异步方式
+        //        data: param,
+        //        dataType: "json",
+        //        success: function (data) {
+        //            if (isJSON(data.d)) {
+        //                rtv = $.parseJSON(data.d);
+        //            } else {
+        //                rtv = data.d;
+        //            }
+        //        },
+        //        error: function (message) {
+        //            alert("提交失败:" + asmxName + "." + functionName + $.parseJSON(param) + message.responseText);
+        //        }
+        //    });
+        //    return rtv;
+        //}
+        //var rtv = WebMethod("api", "PostURL",
+        //    JSON.stringify({
+        //        url: 'http://10.160.204.135:5001/api/code?code=11901544931102YY-5009-MBJB2'
+                
+        //    }
+        //    ));
+
+        //function openAndCloseWindow() {
+        //    // 打开一个新窗口
+        //    var newWindow = window.open("http://10.160.204.135:5001/api/code?code=11901544931102YY-5009-MBJB2", "_blank");
+
+        //    // 3秒后关闭新窗口
+        //    setTimeout(function () {
+        //        newWindow.close();
+        //    }, 13000);
+        //}
+        //openAndCloseWindow();
+
+        //function makeAjaxGetRequest(url) {
+        //    var xhr = new XMLHttpRequest();
+
+        //    xhr.open("GET", url, true); // 设置请求类型为 GET
+
+        //    xhr.onreadystatechange = function () {
+        //        if (xhr.readyState === 4) { // 确保请求已完成
+        //            if (xhr.status >= 200 && xhr.status < 300) {
+        //                // 请求成功
+        //                console.log("Response:", xhr.responseText);
+        //            } else {
+        //                // 请求失败
+        //                console.error("Error:", xhr.statusText);
+        //            }
+        //        }
+        //    };
+
+        //    xhr.onerror = function () {
+        //        console.error("Request failed");
+        //    };
+
+        //    xhr.send(); // 发送请求
+        //}
+
+        //// 示例：调用函数
+        //makeAjaxGetRequest("http://10.160.204.135:5001/api/code?code=11901544931102YY-5009-MBJB2"); // 替换为您要调用的 URL
+
+        //window.open("HtmlPage4.html", "_blank");
+
+
+        // 打开新窗口
+        var newWindow = window.open("HtmlPage4.html", "_blank", "width=200,height=200");
+
+        // 设置窗口为最小尺寸
+        newWindow.resizeTo(200, 200);
+
+        // 尝试最小化窗口
+        // 注意：大多数浏览器不允许脚本最小化窗口
+        setTimeout(function () {
+            // 试图最小化窗口
+            newWindow.blur(); // 使新窗口失去焦点
+            window.focus(); // 返回到主窗口
+        }, 1000); // 延迟1秒
+    </script>
+</head>
+<body>
+    <!--<iframe src="http://10.160.204.135:5001/api/code?code=11901544931102YY-5009-MBJB2">
+
+    </iframe>-->
+    aaaa
+</body>
+</html>

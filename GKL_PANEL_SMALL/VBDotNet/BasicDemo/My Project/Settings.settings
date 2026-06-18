@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="GooglePanel_VB_ot5600_api" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.160.192.114/GKL2020/api.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
