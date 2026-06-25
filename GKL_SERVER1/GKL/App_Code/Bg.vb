@@ -52,9 +52,9 @@ Public Class Bg
         Dim IsGuanlianTuopan As Boolean = System.Configuration.ConfigurationManager.AppSettings.[Get]("tuopan_lines").ToString().IndexOf(line_cd) >= 0
 
         '存在的商品不关联托盘
-        'If IsGuanlianTuopan Then
-        '    IsGuanlianTuopan = Not (New GKL_BgDA).NotGuanlianTP(cd)
-        'End If
+        If IsGuanlianTuopan Then
+            IsGuanlianTuopan = Not (New GKL_BgDA).NotGuanlianTP(cd)
+        End If
 
 
         Dim dt As DataTable
