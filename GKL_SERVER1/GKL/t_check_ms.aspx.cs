@@ -108,9 +108,17 @@ public partial class t_check_ms : System.Web.UI.Page
                 }
             }
 
+            //检查托盘的生产线
             if (System.Configuration.ConfigurationManager.AppSettings.Get("tuopan_lines").ToString().IndexOf(ViewState["line_id"].ToString()) > 0)
             {
                 hidTuopanLines.Text = "1";
+
+                //存在的商品不关联托盘
+                GKL_BgDA dbd = new GKL_BgDA();
+                if (dbd.NotGuanlianTP(ViewState["code"].ToString()))
+                {
+                    hidTuopanLines.Text = "0";
+                }
             }
             else
             {
@@ -257,7 +265,7 @@ public partial class t_check_ms : System.Web.UI.Page
                 {
                     BC_CK.InsBaogongRireki(ViewState["chk_no"].ToString(), ViewState["make_no"].ToString(), ViewState["code"].ToString(), ViewState["line_id"].ToString(), txt);
                 }
-                catch (Exception e2)
+                catch (Exception)
                 {
 
                 }
@@ -266,7 +274,7 @@ public partial class t_check_ms : System.Web.UI.Page
                 if (dt.Rows.Count > 0 && dtRlt.Rows.Count > 0)
                 {
                     //OK 数 bg_result
-                    if (Convert.ToInt32(dt.Rows[0]["ok_suu"].ToString()) >= 2 && (dt.Rows[0]["bg_result"] == "" || dt.Rows[0]["bg_result"] == "NG"))
+                    if (Convert.ToInt32(dt.Rows[0]["ok_suu"].ToString()) >= 2 && (dt.Rows[0]["bg_result"].ToString() == "" || dt.Rows[0]["bg_result"].ToString() == "NG"))
                     {
                         //如果本次检查结果也是OK
                         if (Common.NullToEmpty(dtRlt.Rows[0]["chk_result"].ToString()) == "1")
@@ -283,7 +291,7 @@ public partial class t_check_ms : System.Web.UI.Page
                 }
             }
         }
-        catch (Exception e1)
+        catch (Exception)
         {
 
         }
@@ -397,6 +405,11 @@ public partial class t_check_ms : System.Web.UI.Page
             Common.ShowMsg(this.Page, "检查计划数据不存在;");
             return;
         }
+    }
+
+    protected void btnMakeQR_Click(object sender, EventArgs e)
+    {
+
     }
 }
 

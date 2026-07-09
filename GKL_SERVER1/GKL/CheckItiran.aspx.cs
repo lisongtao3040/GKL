@@ -750,7 +750,7 @@ public partial class CheckItiran : System.Web.UI.Page
                 {
                     BC_CK.InsBaogongRireki(ViewState["chk_no"].ToString(), ViewState["make_no"].ToString(), ViewState["code"].ToString(), ViewState["line_id"].ToString(), txt);
                 }
-                catch (Exception e2)
+                catch (Exception)
                 {
 
                 }
@@ -759,7 +759,7 @@ public partial class CheckItiran : System.Web.UI.Page
                 if (dt.Rows.Count > 0 && dtRlt2.Rows.Count > 0)
                 {
                     //OK 数 bg_result
-                    if (Convert.ToInt32(dt.Rows[0]["ok_suu"].ToString()) >= 1 && (dt.Rows[0]["bg_result"] == "" || dt.Rows[0]["bg_result"] == "NG"))
+                    if (Convert.ToInt32(dt.Rows[0]["ok_suu"].ToString()) >= 1 && (dt.Rows[0]["bg_result"].ToString() == "" || dt.Rows[0]["bg_result"].ToString() == "NG"))
                     {
                         //如果本次检查结果也是OK
                         if (Common.NullToEmpty(dtRlt2.Rows[0]["chk_result"].ToString()) == "1")
@@ -776,9 +776,9 @@ public partial class CheckItiran : System.Web.UI.Page
                 }
             }
         }
-        catch (Exception e1)
+        catch (Exception)
         {
-
+           
         }
 
 

@@ -52,6 +52,7 @@
 
             <div style="float: left; padding-left: 4px;">
                 <asp:Button ID="btnMakeQR" runat="server" Text="打印QR" Font-Size="32px" Height="60px" Width="140px" />
+
                 <asp:Button ID="btnZB" runat="server" Text="影像" Style="width: 160px; height: 60px; margin-left: 10px; display: none;" />
                 <input type="button" value="关联托盘" id="joinTp_scmx" style="width: 160px; height: 60px; margin-left: 10px;" />
                 (<b id="acTp"></b>)
