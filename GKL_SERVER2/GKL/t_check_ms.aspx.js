@@ -109,6 +109,8 @@ $(document).ready(function () {
             $("#btnZB").css('background-color', '');
             $("#rtv0").text("80分钟未获得结果，终止影像检查结果获取");
             $("#btnZB").val("1.准备影像检");
+            putYXLD_CNT = 0; // 重置计数器
+            return; // 🛑 关键：直接返回，不继续往下执行
         }
 
         if (rtv == "NEXT") {
@@ -141,14 +143,35 @@ $(document).ready(function () {
                 $("#gvMs").find("tr").each(function (index, element) {
                     var tr = $(element);
                     var kmTd = tr.find("td").eq(1);
-                    var kmTxt = tr.attr("chk_km_name");
+                    var kmTxt = tr.attr("chk_km_name") || ""; // 安全获取属性，防止 undefined 报错
                     if (kmTxt.indexOf(km) >= 0 && km != '' && kmTxt != '') {
                         var jqIn1Obj = tr.find(".jq_in1");
-                        jqIn1Obj[0].click();
-                        if (yx_rlt == "0") {
+                        if (jqIn1Obj.length === 0) return; // 如果没找到元素则跳过
+                        
+                        //如果检查项目包含 SW或DH，那么 把值放到 In1，并用函数检查是否正确
+                        if(km.indexOf('SW') >= 0 || km.indexOf('DH') >= 0){
+                            jqIn1Obj[0].click();
+                            $(jqIn1Obj[0]).val(yx_rlt);
+
+                            if (GetChkMethodStr($(jqIn1Obj[0]))) {
+                                SetResult(true, $(jqIn1Obj[0]));
+                            } else {
+                                SetResult(false, $(jqIn1Obj[0]));
+                            }
+
+                        } 
+                        // 2. 不包含 SW/DH，且值为 0 -> NG
+                        else if (yx_rlt == "0") {
+                            jqIn1Obj[0].click();
                             SetResult(false, jqIn1Obj);
-                        } else {
+
+                        } 
+                        // 3. 不包含 SW/DH，且值不为 0 -> OK
+                        else {  
+                            
+                            jqIn1Obj[0].click();
                             SetResult(true, jqIn1Obj);
+
                         }
 
                     }
@@ -1090,7 +1113,7 @@ $(document).ready(function () {
         var cd = $("#lblCode").text();
         var no = $("#lblMake_no").text();
         var line = $("#hidPlanLineId").val();
-        putYXLD_CNT = "0";
+        putYXLD_CNT = 0;
         $("#rtv1").text("");
         $("#rtv2").text("");
         $("#btnZB")[0].disabled = true;
