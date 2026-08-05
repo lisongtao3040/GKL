@@ -708,7 +708,7 @@ $(document).ready(function () {
         str = str.replace("{kj0}", tmp_kj_0).replace("{kj0}", tmp_kj_0).replace("{kj0}", tmp_kj_0).replace("{kj0}", tmp_kj_0).replace("{kj0}", tmp_kj_0);
         str = str.replace("{kj1}", tmp_kj_1).replace("{kj1}", tmp_kj_1).replace("{kj1}", tmp_kj_1).replace("{kj1}", tmp_kj_1).replace("{kj1}", tmp_kj_1);
         str = str.replace("{kj2}", tmp_kj_2).replace("{kj2}", tmp_kj_2).replace("{kj2}", tmp_kj_2).replace("{kj2}", tmp_kj_2).replace("{kj2}", tmp_kj_2);
-
+        str = str.replace("{code}", $("#lblCode").text());
         try {
 
             if (tmp_chk_formula == "{color}") {

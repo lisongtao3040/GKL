@@ -18,7 +18,7 @@
     <script language="javascript" type="text/javascript" src="./js/jquery-1.4.1.min.js"></script>
     <script type="text/javascript" src="./Common.js"></script>
     <%--    <script src="js/jquery-2.1.1.js"></script>--%>
-    <script language="javascript" type="text/javascript" src="./t_check_ms.aspx.js?version=55336"></script>
+    <script language="javascript" type="text/javascript" src="./t_check_ms.aspx.js?version=55337"></script>
     <script language="javascript" type="text/javascript" src="./t_check_msForTpAndBg.js?version=5355"></script>
 
     <script language="javascript" type="text/javascript" src="./JsBarcode.js"></script>
