@@ -25,9 +25,9 @@ Public Class TCheckResultDA
     ''' <para>2019/01/07  作成者：李さん 新規作成 </para>
     ''' </history>
 
-    Public Function SelTCheckResult(ByVal chkNo_key As String, _
-           ByVal nen_key As String, _
-           ByVal lineId_key As String, _
+    Public Function SelTCheckResult(ByVal chkNo_key As String,
+           ByVal nen_key As String,
+           ByVal lineId_key As String,
            ByVal makeNo_key As String) As Data.DataTable
 
         'SQLコメント
@@ -113,25 +113,25 @@ Public Class TCheckResultDA
     ''' <para>2019/01/07  作成者：李さん 新規作成 </para>
     ''' </history>
 
-    Public Function UpdTCheckResult(ByVal chkNo_key As String, _
-               ByVal nen_key As String, _
-               ByVal lineId_key As String, _
-               ByVal makeNo_key As String, _
-               ByVal chkNo As String, _
-               ByVal nen As String, _
-               ByVal planNo As String, _
-               ByVal lineId As String, _
-               ByVal makeNo As String, _
-               ByVal code As String, _
-               ByVal suu As String, _
-               ByVal tempId As String, _
-               ByVal chkResult As String, _
-               ByVal chkUser As String, _
-               ByVal chkStartDate As String, _
-               ByVal chkEndDate As String, _
-               ByVal parentChkNo As String, _
-               ByVal status As String, _
-               ByVal insUser As String, _
+    Public Function UpdTCheckResult(ByVal chkNo_key As String,
+               ByVal nen_key As String,
+               ByVal lineId_key As String,
+               ByVal makeNo_key As String,
+               ByVal chkNo As String,
+               ByVal nen As String,
+               ByVal planNo As String,
+               ByVal lineId As String,
+               ByVal makeNo As String,
+               ByVal code As String,
+               ByVal suu As String,
+               ByVal tempId As String,
+               ByVal chkResult As String,
+               ByVal chkUser As String,
+               ByVal chkStartDate As String,
+               ByVal chkEndDate As String,
+               ByVal parentChkNo As String,
+               ByVal status As String,
+               ByVal insUser As String,
                ByVal insDate As String) As Boolean
 
         'SQLコメント
@@ -203,8 +203,8 @@ Public Class TCheckResultDA
 
     End Function
 
-    Public Function DeleteCheckResult(ByVal chkNo_key As String, _
-           ByVal lineId_key As String, _
+    Public Function DeleteCheckResult(ByVal chkNo_key As String,
+           ByVal lineId_key As String,
            ByVal insUser As String) As Boolean
 
         'SQLコメント
@@ -267,24 +267,24 @@ Public Class TCheckResultDA
     ''' <para>2019/01/07  作成者：李さん 新規作成 </para>
     ''' </history>
 
-    Public Function InsTCheckResult(ByVal chkNo As String, _
-               ByVal nen As String, _
-               ByVal chk_times As String, _
-               ByVal planNo As String, _
-               ByVal lineId As String, _
-               ByVal loginlineId As String, _
-               ByVal makeNo As String, _
-               ByVal code As String, _
-               ByVal suu As String, _
-               ByVal tempId As String, _
-               ByVal chkResult As String, _
-               ByVal chkUser As String, _
-               ByVal chkYoteiDate As String, _
-               ByVal chkStartDate As String, _
-               ByVal chkEndDate As String, _
-               ByVal parentChkNo As String, _
-               ByVal status As String, _
-               ByVal insUser As String, _
+    Public Function InsTCheckResult(ByVal chkNo As String,
+               ByVal nen As String,
+               ByVal chk_times As String,
+               ByVal planNo As String,
+               ByVal lineId As String,
+               ByVal loginlineId As String,
+               ByVal makeNo As String,
+               ByVal code As String,
+               ByVal suu As String,
+               ByVal tempId As String,
+               ByVal chkResult As String,
+               ByVal chkUser As String,
+               ByVal chkYoteiDate As String,
+               ByVal chkStartDate As String,
+               ByVal chkEndDate As String,
+               ByVal parentChkNo As String,
+               ByVal status As String,
+               ByVal insUser As String,
                ByVal insDate As String) As Boolean
 
         'SQLコメント
@@ -467,9 +467,9 @@ Public Class TCheckResultDA
     ''' <para>2019/01/07  作成者：李さん 新規作成 </para>
     ''' </history>
 
-    Public Function DelTCheckResult(ByVal chkNo_key As String, _
-               ByVal nen_key As String, _
-               ByVal lineId_key As String, _
+    Public Function DelTCheckResult(ByVal chkNo_key As String,
+               ByVal nen_key As String,
+               ByVal lineId_key As String,
                ByVal makeNo_key As String) As Boolean
 
         'SQLコメント
@@ -913,10 +913,10 @@ Public Class TCheckResultDA
 
 
 
-    Public Function InsBaogongRireki(ByVal chkNo As String, _
-               ByVal makeNo As String, _
-               ByVal cd As String, _
-               ByVal line As String, _
+    Public Function InsBaogongRireki(ByVal chkNo As String,
+               ByVal makeNo As String,
+               ByVal cd As String,
+               ByVal line As String,
                ByVal txt As String) As Boolean
 
         'SQLコメント
@@ -1062,6 +1062,25 @@ Public Class TCheckResultDA
         sb.AppendLine(",'" & kbn & "'")
         SqlHelperNew.ExecuteNonQuery(DataAccessManager.Connection, CommandType.Text, sb.ToString(), paramList.ToArray)
         Return True
+
+    End Function
+
+
+    Public Function GetCdColor(ByVal cd As String) As String
+        Dim result As String = ""
+        Dim sb As New StringBuilder
+        'SQL文
+        sb.AppendLine("SELECT * FROM m_code_color WHERE")
+        sb.AppendLine("[code]='" & cd & "'")
+
+
+        Dim dsInfo As New Data.DataSet
+        SqlHelperNew.FillDataset(DataAccessManager.Connection, CommandType.Text, sb.ToString(), dsInfo, "GetYXLD")
+        If dsInfo.Tables(0).Rows.Count > 0 Then
+            Return dsInfo.Tables(0).Rows(0).Item("color").ToString & "|" & dsInfo.Tables(0).Rows(0).Item("mark").ToString
+        Else
+            Return ""
+        End If
 
     End Function
 

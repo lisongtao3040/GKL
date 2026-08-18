@@ -20,6 +20,8 @@ Partial Class MENU
             Else
                 lbCheckMethod.Visible = False
             End If
+            lblUserCd.Text = ViewState("menu_user_cd")
+            lblUserName.Text = ViewState("menu_user_name")
 
             'Dim csScript As New StringBuilder
             'With csScript

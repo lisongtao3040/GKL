@@ -132,6 +132,19 @@ public partial class t_check_ms : System.Web.UI.Page
 
             //'明細項目設定
             MsInit();
+
+            TCheckResultBC BC_CK = new TCheckResultBC();
+            string nr = BC_CK.GetCdColor(ViewState["code"].ToString());
+
+            if (nr != "")
+            {
+                string color = nr.Split( '|' )[0];
+                string txt = nr.Split('|')[1];
+
+                form1.Style.Add("border", "4px "+ color + " solid");
+                lblMake_no.Style.Add("border", "6px " + color + " solid");
+                lblColorMark.Text = txt;
+            }
         }
 
         Context.Items["menu_line_id"] = ViewState["menu_line_id"];

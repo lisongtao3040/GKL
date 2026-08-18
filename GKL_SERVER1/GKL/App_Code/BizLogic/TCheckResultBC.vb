@@ -287,5 +287,8 @@ Public Function DelTCheckResult(Byval chkNo_key AS String, _
         Return DA.InsYXLDLog(code, kbn)
     End Function
 
+    Public Function GetCdColor(ByVal cd As String) As String
+        Return DA.GetCdColor(cd)
+    End Function
 
 End Class

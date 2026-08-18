@@ -63,7 +63,9 @@
                 <iframe id="fraYXLD" width="0" height="0"></iframe>
                 <iframe id="fraWriteTxt1" width="0" height="0"></iframe>
                 <iframe id="fraWriteTxt2" width="0" height="0"></iframe>
+                <asp:Label ID="lblColorMark" runat="server" Text="fff" ForeColor="red"></asp:Label>
             </div>
+                 
         </div>
 
 

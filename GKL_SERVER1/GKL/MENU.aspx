@@ -12,6 +12,10 @@
 
     <!--CSS-->
     <link href="tmp.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="./jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./jquery/jquery.cookie.js"></script>
+    <link rel="stylesheet" href="./jquery-ui-1.12.1/jquery-ui.css" />
 
     <script language="javascript">
 
@@ -55,6 +59,8 @@
 
 
     </script>
+    <script type="text/javascript" src="./Menu.js?randomId=1.00"></script>
+    <link rel="stylesheet" href="./Menu.css" />
 </head>
 
 <body>
@@ -69,6 +75,10 @@
                 </div>
                 <div style="float: left; padding-left: 4px;">
                     <%Response.Write(Common.SetTitle("MENU"))%>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <asp:Label ID="lblUserCd" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lblUserName" runat="server" Text="Label"></asp:Label>
+
                 </div>
             </div>
             <div class="" style="">
@@ -82,22 +92,20 @@
                                 <asp:LinkButton ID="lbUser" runat="server">用户 MS</asp:LinkButton><br />
                                 <asp:LinkButton ID="lbProject" runat="server">工程 MS</asp:LinkButton><br />
                                 <asp:LinkButton ID="lbTools" runat="server">治具 MS</asp:LinkButton><br />
-           
-                        
+            
+                                
+                                <a href="#" onclick="login('m_code_color')" class="link link--kukuri">商品颜色设定</a>
+                                <br />
+
                                 <a href="#" onclick="window.open('APP/PictureImport/PictureImport.application')" class="link link--kukuri">图片 MS</a>
                                 <br />
-                                    <iframe id="ifm1" runat="server" frameborder="0" width="300px" height="100px" 
-                                        style="margin:0px auto 0px auto;">
+                                <iframe id="ifm1" runat="server" frameborder="0" width="300px" height="100px"
+                                    style="margin: 0px auto 0px auto;"></iframe>
+                                <br />
 
-                                    </iframe>
-                                   <br />
-                  
                                 <%--<asp:LinkButton ID="lbPic" runat="server">图片MS</asp:LinkButton>--%>
                                 <%--<a href="APP/PictureImport.zip">图片MS</a>--%>
                                 <%--<a href="APP/PictureImport/PictureImport.application" class="link link--kukuri">图片MS</a>--%>
-
-
-
                             </div>
                         </td>
                         <td>
