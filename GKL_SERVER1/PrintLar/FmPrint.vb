@@ -94,7 +94,7 @@ Public Class FmPrint
         sb.AppendLine("      a.[make_no]")
         sb.AppendLine("  FROM [t_check_result] a")
         sb.AppendLine("  INNER JOIN [m_print_lines_code_relation] b")
-        sb.AppendLine("  ON a.code = b.J_CD")
+        sb.AppendLine("  ON (a.code = b.J_CD or a.code = b.CD)")
         sb.AppendLine("  WHERE a.chk_no='" & chk_no & "'")
 
         Dim ds As New DataSet

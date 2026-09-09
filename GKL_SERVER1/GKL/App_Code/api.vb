@@ -570,7 +570,7 @@ Public Class api
             sb.AppendLine("      ,b.J_CD")
             sb.AppendLine("  FROM [t_check_result] a")
             sb.AppendLine("  LEFT JOIN [m_print_lines_code_relation] b")
-            sb.AppendLine("  ON a.code = b.J_CD")
+            sb.AppendLine("  ON (a.code = b.J_CD or a.code = b.CD)")
             sb.AppendLine("  LEFT JOIN [dbo].[m_print_history] c")
             sb.AppendLine("  ON a.chk_no = c.chk_no")
             sb.AppendLine("  AND b.CD = c.CD")

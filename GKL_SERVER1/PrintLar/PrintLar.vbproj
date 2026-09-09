@@ -13,7 +13,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\GITEE\GKL-GITEE\GKL_SERVER1\GKL\APP\FmPrint\</PublishUrl>
+    <PublishUrl>D:\Github_lis3040\GKL\GKL_SERVER1\GKL\APP\FmPrint\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>http://10.160.192.114/GKL2020/APP/FmPrint/</UpdateUrl>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>26</ApplicationRevision>
+    <ApplicationRevision>28</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
