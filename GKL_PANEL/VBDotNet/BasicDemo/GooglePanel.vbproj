@@ -110,10 +110,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>8D24F18DC787A87D47BEF8DBD20BAE9DCC623DF5</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>F2CD98BFB149D52F80E5F350263BF9BE3EB736D9</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>GooglePanel_8_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>GooglePanel_9_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -279,6 +279,7 @@
     <None Include="GooglePanel_6_TemporaryKey.pfx" />
     <None Include="GooglePanel_7_TemporaryKey.pfx" />
     <None Include="GooglePanel_8_TemporaryKey.pfx" />
+    <None Include="GooglePanel_9_TemporaryKey.pfx" />
     <None Include="GooglePanel_TemporaryKey.pfx" />
     <None Include="GooglePanel_一時キー.pfx" />
     <None Include="My Project\app.manifest" />

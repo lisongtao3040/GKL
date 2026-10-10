@@ -12,9 +12,12 @@
 
     <!--CSS-->
     <link href="tmp.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="./jquery/jquery-3.6.0.min.js"></script>
+<%--    <script type="text/javascript" src="./jquery/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="./jquery-ui-1.12.1/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="./jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="./jquery/jquery.cookie.js"></script>--%>
+
+    <script type="text/javascript" src="/js/jquery-1.4.1.min.js"></script>
+
     <link rel="stylesheet" href="./jquery-ui-1.12.1/jquery-ui.css" />
 
     <script language="javascript">

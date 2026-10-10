@@ -9,6 +9,13 @@ Partial Class MENU
         Cparam.SetCommonViewState(IsPostBack, Me.ViewState, Me.Context)
 
         If Not IsPostBack Then
+
+            Dim userAgent As String = If(Request.UserAgent, "")
+
+            ' 猜测逻辑：包含 IE 内核特征 (Trident) 且包含 .NET 运行时标识
+            Dim maybeWebBrowser As Boolean = userAgent.Contains("Trident") AndAlso userAgent.Contains(".NET CLR")
+
+
             ViewState("menu_line_id") = Common.NullToEmpty(Context.Items("menu_line_id"))
             ViewState("menu_user_cd") = Common.NullToEmpty(Context.Items("menu_user_cd"))
             ViewState("menu_user_name") = Common.NullToEmpty(Context.Items("menu_user_name"))
@@ -20,10 +27,16 @@ Partial Class MENU
             lblUserCd.Text = ViewState("menu_user_cd")
             lblUserName.Text = ViewState("menu_user_name")
 
-            ' ifm2.Attributes.Item("src") = "http://localhost:21948/GKL2_CHK_MENU2.aspx?user_id=" + ViewState("menu_user_cd") + "&user_name=" + ViewState("menu_user_name") + "&line_cd=" + ViewState("menu_line_id")
+
+            If Not maybeWebBrowser Then
+                'ifm2.Attributes.Item("src") = "http://localhost:21948/GKL2_CHK_MENU2.aspx?user_id=" + ViewState("menu_user_cd") + "&user_name=" + ViewState("menu_user_name") + "&line_cd=" + ViewState("menu_line_id")
 
 
-            ifm2.Attributes.Item("src") = "http://10.160.192.114/DWP20/GKL2_CHK_MENU2.aspx?user_id=" + ViewState("menu_user_cd") + "&user_name=" + ViewState("menu_user_name") + "&line_cd=" + ViewState("menu_line_id")
+                ifm2.Attributes.Item("src") = "http://10.160.192.114/DWP20/GKL2_CHK_MENU2.aspx?user_id=" + ViewState("menu_user_cd") + "&user_name=" + ViewState("menu_user_name") + "&line_cd=" + ViewState("menu_line_id")
+
+            Else
+
+            End If
 
             Dim csScript As New StringBuilder
             With csScript

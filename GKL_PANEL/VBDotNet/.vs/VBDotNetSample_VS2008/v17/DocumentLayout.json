@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Github_lis3040\\GKL\\GKL_PANEL\\VBDotNet\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F7816713-6005-4098-AC6F-62ADA42EDC22}|BasicDemo\\GooglePanel.vbproj|d:\\github_lis3040\\gkl\\gkl_panel\\vbdotnet\\basicdemo\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F7816713-6005-4098-AC6F-62ADA42EDC22}|BasicDemo\\GooglePanel.vbproj|solutionrelative:basicdemo\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "app.config",
+              "DocumentMoniker": "D:\\Github_lis3040\\GKL\\GKL_PANEL\\VBDotNet\\BasicDemo\\app.config",
+              "RelativeDocumentMoniker": "BasicDemo\\app.config",
+              "ToolTip": "D:\\Github_lis3040\\GKL\\GKL_PANEL\\VBDotNet\\BasicDemo\\app.config",
+              "RelativeToolTip": "BasicDemo\\app.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvw8AAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-10-08T04:52:12.783Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

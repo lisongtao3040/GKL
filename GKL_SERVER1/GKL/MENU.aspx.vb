@@ -10,7 +10,10 @@ Partial Class MENU
 
         If Not IsPostBack Then
 
+            Dim userAgent As String = If(Request.UserAgent, "")
 
+            ' 猜测逻辑：包含 IE 内核特征 (Trident) 且包含 .NET 运行时标识
+            Dim maybeWebBrowser As Boolean = userAgent.Contains("Trident") AndAlso userAgent.Contains(".NET CLR")
 
             ViewState("menu_line_id") = Common.NullToEmpty(Context.Items("menu_line_id"))
             ViewState("menu_user_cd") = Common.NullToEmpty(Context.Items("menu_user_cd"))
@@ -35,9 +38,15 @@ Partial Class MENU
             ''ページ応答で、クライアント側のスクリプト ブロックを出力します
             'Page.ClientScript.RegisterStartupScript(Page.GetType(), "localStorage", csScript.ToString, True)
 
-            ifm1.Attributes.Item("src") = "http://10.160.192.114/DWP20/GKL_CHK_MENU.aspx?user_id=" + ViewState("menu_user_cd") + "&user_name=" + ViewState("menu_user_name") + "&line_cd=" + ViewState("menu_line_id")
+            If Not maybeWebBrowser Then
+                ifm1.Attributes.Item("src") = "http://10.160.192.114/DWP20/GKL_CHK_MENU.aspx?user_id=" + ViewState("menu_user_cd") + "&user_name=" + ViewState("menu_user_name") + "&line_cd=" + ViewState("menu_line_id")
 
-            ifm2.Attributes.Item("src") = "http://10.160.192.114/DWP20/GKL_CHK_MENU2.aspx?user_id=" + ViewState("menu_user_cd") + "&user_name=" + ViewState("menu_user_name") + "&line_cd=" + ViewState("menu_line_id")
+                ifm2.Attributes.Item("src") = "http://10.160.192.114/DWP20/GKL_CHK_MENU2.aspx?user_id=" + ViewState("menu_user_cd") + "&user_name=" + ViewState("menu_user_name") + "&line_cd=" + ViewState("menu_line_id")
+
+            Else
+
+            End If
+
 
 
             '报工系统是否打开
