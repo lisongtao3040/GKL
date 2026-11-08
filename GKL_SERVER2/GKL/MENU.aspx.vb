@@ -32,7 +32,7 @@ Partial Class MENU
                 'ifm2.Attributes.Item("src") = "http://localhost:21948/GKL2_CHK_MENU2.aspx?user_id=" + ViewState("menu_user_cd") + "&user_name=" + ViewState("menu_user_name") + "&line_cd=" + ViewState("menu_line_id")
 
 
-                ifm2.Attributes.Item("src") = "http://10.160.192.114/DWP20/GKL2_CHK_MENU2.aspx?user_id=" + ViewState("menu_user_cd") + "&user_name=" + ViewState("menu_user_name") + "&line_cd=" + ViewState("menu_line_id")
+                ifm2.Attributes.Item("src") = "http://10.160.192.41/DWP20/GKL2_CHK_MENU2.aspx?user_id=" + ViewState("menu_user_cd") + "&user_name=" + ViewState("menu_user_name") + "&line_cd=" + ViewState("menu_line_id")
 
             Else
 

@@ -64,10 +64,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>643972A60ADFEFC0C3A866C025363BD4FE281D0D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>4F7E0E5C77B99A82C223A7F876B144B0AD4C7BE7</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Gkl_mail_一時キー.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Gkl_mail_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -125,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Gkl_mail_TemporaryKey.pfx" />
     <None Include="Gkl_mail_一時キー.pfx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

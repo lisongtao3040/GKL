@@ -90,12 +90,12 @@
             <br />
         </asp:Panel>
 
-<%--        <a href="http://10.160.192.114/AppDownload/default.aspx" target="_blank">
+<%--        <a href="http://10.160.192.41/AppDownload/default.aspx" target="_blank">
             软件安装 测试用
         </a>--%>
         <br />
-        <a href="\\10.160.192.114\gkl_ie_json_show\" target="_blank">
-            \\10.160.192.114\gkl_ie_json_show\
+        <a href="\\10.160.192.41\gkl_ie_json_show\" target="_blank">
+            \\10.160.192.41\gkl_ie_json_show\
         </a>
 
         

@@ -38,7 +38,7 @@ Partial Class YXLD_SEND
             'Dim rtv As String = PostData("http://192.168.1.80:5001/api/code?=" & kbn & no & cnt & cd & lr, "")
             'Dim rtv As String
             'rtv = GetData("http://192.168.1.80:5001/api/code", "code=" & kbn & no & cnt & cd & lr)
-            'rtv = GetData("http://10.160.192.114/GN_CHK/Default.aspx", "code=" & kbn & no & cnt & cd & lr)
+            'rtv = GetData("http://10.160.192.41/GN_CHK/Default.aspx", "code=" & kbn & no & cnt & cd & lr)
 
             Dim BC As New TCheckResultBC
 

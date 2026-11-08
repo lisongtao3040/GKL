@@ -8,7 +8,7 @@
         <beforeApplicationStartup />
       </update>
     </subscription>
-    <deploymentProvider codebase="file://10.160.192.114/gkl2020/APP/tyouhyou/Tyouhyou.application" />
+    <deploymentProvider codebase="file://10.160.192.41/gkl2020/APP/tyouhyou/Tyouhyou.application" />
   </deployment>
   <dependency>
     <dependentAssembly dependencyType="install" codebase="Application Files\Tyouhyou_1_0_0_45\Tyouhyou.exe.manifest" size="10440">

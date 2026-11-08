@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="GooglePanel_VB_ot5600_api" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://dltdlfsdb004/GKL2020/api.asmx</Value>
+      <Value Profile="(Default)">http://10.160.192.41/GKL2020/api.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

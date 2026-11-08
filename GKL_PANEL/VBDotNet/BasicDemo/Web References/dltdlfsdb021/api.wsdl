@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
       <s:element name="SaveIMG">
@@ -19,6 +19,192 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SetJunbiYXLD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="line" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetJunbiYXLDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetJunbiYXLDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYXLD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="line" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYXLDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYXLDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYXLD_RLT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="line" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="start_time" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYXLD_RLTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYXLD_RLTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetYXLD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="line" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="txt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetYXLDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetYXLDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostURL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostURLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostURLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetServerStorage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login_user_cd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetServerStorageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetServerStorageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerStorage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login_user_cd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerStorageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServerStorageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteSerLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_cd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="txt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteSerLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WriteSerLogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHujiao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="line_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHujiaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHujiaoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPrintLinesCodeRelationByChkNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chk_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPrintLinesCodeRelationByChkNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPrintLinesCodeRelationByChkNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SavePrintHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chk_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="line_CD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="J_CD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="printerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SavePrintHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SavePrintHistoryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPrintedLabels">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chk_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPrintedLabelsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPrintedLabelsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="SaveIMGSoapIn">
@@ -27,16 +213,244 @@
   <wsdl:message name="SaveIMGSoapOut">
     <wsdl:part name="parameters" element="tns:SaveIMGResponse" />
   </wsdl:message>
+  <wsdl:message name="SetJunbiYXLDSoapIn">
+    <wsdl:part name="parameters" element="tns:SetJunbiYXLD" />
+  </wsdl:message>
+  <wsdl:message name="SetJunbiYXLDSoapOut">
+    <wsdl:part name="parameters" element="tns:SetJunbiYXLDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetYXLDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYXLD" />
+  </wsdl:message>
+  <wsdl:message name="GetYXLDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYXLDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetYXLD_RLTSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYXLD_RLT" />
+  </wsdl:message>
+  <wsdl:message name="GetYXLD_RLTSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYXLD_RLTResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetYXLDSoapIn">
+    <wsdl:part name="parameters" element="tns:SetYXLD" />
+  </wsdl:message>
+  <wsdl:message name="SetYXLDSoapOut">
+    <wsdl:part name="parameters" element="tns:SetYXLDResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostURLSoapIn">
+    <wsdl:part name="parameters" element="tns:PostURL" />
+  </wsdl:message>
+  <wsdl:message name="PostURLSoapOut">
+    <wsdl:part name="parameters" element="tns:PostURLResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetServerStorageSoapIn">
+    <wsdl:part name="parameters" element="tns:SetServerStorage" />
+  </wsdl:message>
+  <wsdl:message name="SetServerStorageSoapOut">
+    <wsdl:part name="parameters" element="tns:SetServerStorageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerStorageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerStorage" />
+  </wsdl:message>
+  <wsdl:message name="GetServerStorageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerStorageResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteSerLogSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteSerLog" />
+  </wsdl:message>
+  <wsdl:message name="WriteSerLogSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteSerLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHujiaoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHujiao" />
+  </wsdl:message>
+  <wsdl:message name="GetHujiaoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHujiaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPrintLinesCodeRelationByChkNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPrintLinesCodeRelationByChkNo" />
+  </wsdl:message>
+  <wsdl:message name="GetPrintLinesCodeRelationByChkNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPrintLinesCodeRelationByChkNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SavePrintHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:SavePrintHistory" />
+  </wsdl:message>
+  <wsdl:message name="SavePrintHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:SavePrintHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPrintedLabelsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPrintedLabels" />
+  </wsdl:message>
+  <wsdl:message name="GetPrintedLabelsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPrintedLabelsResponse" />
+  </wsdl:message>
   <wsdl:portType name="apiSoap">
     <wsdl:operation name="SaveIMG">
       <wsdl:input message="tns:SaveIMGSoapIn" />
       <wsdl:output message="tns:SaveIMGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetJunbiYXLD">
+      <wsdl:input message="tns:SetJunbiYXLDSoapIn" />
+      <wsdl:output message="tns:SetJunbiYXLDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYXLD">
+      <wsdl:input message="tns:GetYXLDSoapIn" />
+      <wsdl:output message="tns:GetYXLDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYXLD_RLT">
+      <wsdl:input message="tns:GetYXLD_RLTSoapIn" />
+      <wsdl:output message="tns:GetYXLD_RLTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetYXLD">
+      <wsdl:input message="tns:SetYXLDSoapIn" />
+      <wsdl:output message="tns:SetYXLDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostURL">
+      <wsdl:input message="tns:PostURLSoapIn" />
+      <wsdl:output message="tns:PostURLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetServerStorage">
+      <wsdl:input message="tns:SetServerStorageSoapIn" />
+      <wsdl:output message="tns:SetServerStorageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerStorage">
+      <wsdl:input message="tns:GetServerStorageSoapIn" />
+      <wsdl:output message="tns:GetServerStorageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteSerLog">
+      <wsdl:input message="tns:WriteSerLogSoapIn" />
+      <wsdl:output message="tns:WriteSerLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHujiao">
+      <wsdl:input message="tns:GetHujiaoSoapIn" />
+      <wsdl:output message="tns:GetHujiaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrintLinesCodeRelationByChkNo">
+      <wsdl:input message="tns:GetPrintLinesCodeRelationByChkNoSoapIn" />
+      <wsdl:output message="tns:GetPrintLinesCodeRelationByChkNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePrintHistory">
+      <wsdl:input message="tns:SavePrintHistorySoapIn" />
+      <wsdl:output message="tns:SavePrintHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrintedLabels">
+      <wsdl:input message="tns:GetPrintedLabelsSoapIn" />
+      <wsdl:output message="tns:GetPrintedLabelsSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="apiSoap" type="tns:apiSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="SaveIMG">
       <soap:operation soapAction="http://tempuri.org/SaveIMG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetJunbiYXLD">
+      <soap:operation soapAction="http://tempuri.org/SetJunbiYXLD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYXLD">
+      <soap:operation soapAction="http://tempuri.org/GetYXLD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYXLD_RLT">
+      <soap:operation soapAction="http://tempuri.org/GetYXLD_RLT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetYXLD">
+      <soap:operation soapAction="http://tempuri.org/SetYXLD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostURL">
+      <soap:operation soapAction="http://tempuri.org/PostURL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetServerStorage">
+      <soap:operation soapAction="http://tempuri.org/SetServerStorage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerStorage">
+      <soap:operation soapAction="http://tempuri.org/GetServerStorage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteSerLog">
+      <soap:operation soapAction="http://tempuri.org/WriteSerLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHujiao">
+      <soap:operation soapAction="http://tempuri.org/GetHujiao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrintLinesCodeRelationByChkNo">
+      <soap:operation soapAction="http://tempuri.org/GetPrintLinesCodeRelationByChkNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePrintHistory">
+      <soap:operation soapAction="http://tempuri.org/SavePrintHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrintedLabels">
+      <soap:operation soapAction="http://tempuri.org/GetPrintedLabels" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -56,13 +470,121 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SetJunbiYXLD">
+      <soap12:operation soapAction="http://tempuri.org/SetJunbiYXLD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYXLD">
+      <soap12:operation soapAction="http://tempuri.org/GetYXLD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYXLD_RLT">
+      <soap12:operation soapAction="http://tempuri.org/GetYXLD_RLT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetYXLD">
+      <soap12:operation soapAction="http://tempuri.org/SetYXLD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostURL">
+      <soap12:operation soapAction="http://tempuri.org/PostURL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetServerStorage">
+      <soap12:operation soapAction="http://tempuri.org/SetServerStorage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerStorage">
+      <soap12:operation soapAction="http://tempuri.org/GetServerStorage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteSerLog">
+      <soap12:operation soapAction="http://tempuri.org/WriteSerLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHujiao">
+      <soap12:operation soapAction="http://tempuri.org/GetHujiao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrintLinesCodeRelationByChkNo">
+      <soap12:operation soapAction="http://tempuri.org/GetPrintLinesCodeRelationByChkNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePrintHistory">
+      <soap12:operation soapAction="http://tempuri.org/SavePrintHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrintedLabels">
+      <soap12:operation soapAction="http://tempuri.org/GetPrintedLabels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="api">
     <wsdl:port name="apiSoap" binding="tns:apiSoap">
-      <soap:address location="http://10.160.192.114/GKL2020/api.asmx" />
+      <soap:address location="http://10.160.192.41/GKL2020/api.asmx" />
     </wsdl:port>
     <wsdl:port name="apiSoap12" binding="tns:apiSoap12">
-      <soap12:address location="http://10.160.192.114/GKL2020/api.asmx" />
+      <soap12:address location="http://10.160.192.41/GKL2020/api.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

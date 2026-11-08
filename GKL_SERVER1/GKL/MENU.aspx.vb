@@ -39,9 +39,9 @@ Partial Class MENU
             'Page.ClientScript.RegisterStartupScript(Page.GetType(), "localStorage", csScript.ToString, True)
 
             If Not maybeWebBrowser Then
-                ifm1.Attributes.Item("src") = "http://10.160.192.114/DWP20/GKL_CHK_MENU.aspx?user_id=" + ViewState("menu_user_cd") + "&user_name=" + ViewState("menu_user_name") + "&line_cd=" + ViewState("menu_line_id")
+                ifm1.Attributes.Item("src") = "http://10.160.192.41/DWP20/GKL_CHK_MENU.aspx?user_id=" + ViewState("menu_user_cd") + "&user_name=" + ViewState("menu_user_name") + "&line_cd=" + ViewState("menu_line_id")
 
-                ifm2.Attributes.Item("src") = "http://10.160.192.114/DWP20/GKL_CHK_MENU2.aspx?user_id=" + ViewState("menu_user_cd") + "&user_name=" + ViewState("menu_user_name") + "&line_cd=" + ViewState("menu_line_id")
+                ifm2.Attributes.Item("src") = "http://10.160.192.41/DWP20/GKL_CHK_MENU2.aspx?user_id=" + ViewState("menu_user_cd") + "&user_name=" + ViewState("menu_user_name") + "&line_cd=" + ViewState("menu_line_id")
 
             Else
 

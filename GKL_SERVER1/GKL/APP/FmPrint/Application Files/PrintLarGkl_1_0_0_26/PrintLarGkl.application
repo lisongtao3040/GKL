@@ -8,7 +8,7 @@
         <beforeApplicationStartup />
       </update>
     </subscription>
-    <deploymentProvider codebase="http://10.160.192.114/GKL2020/APP/FmPrint/PrintLarGkl.application" />
+    <deploymentProvider codebase="http://10.160.192.41/GKL2020/APP/FmPrint/PrintLarGkl.application" />
   </deployment>
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />

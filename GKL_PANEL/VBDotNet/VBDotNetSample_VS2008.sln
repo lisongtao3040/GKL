@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GooglePanel", "BasicDemo\GooglePanel.vbproj", "{F7816713-6005-4098-AC6F-62ADA42EDC22}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GKL1_WB", "BasicDemo\GKL1_WB.vbproj", "{F7816713-6005-4098-AC6F-62ADA42EDC22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

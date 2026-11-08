@@ -6,7 +6,7 @@
   <appSettings>
     <!--<add key="connectionString" value="Data Source=WIN7U-20150705K\R2; Initial Catalog=GKL;Persist Security Info=True;User ID=sa;Password=1983313a"/>-->
     <!--<add key="connectionString" value="Data Source=10.160.200.39; Initial Catalog=GKL;Persist Security Info=True;User ID=sa;Password=lixil@2014"/>-->
-    <add key="connectionString" value="Data Source=10.160.192.114; Initial Catalog=GKL;Persist Security Info=True;User ID=sa;Password=sa"/>
+    <add key="connectionString" value="Data Source=10.160.192.41; Initial Catalog=GKL;Persist Security Info=True;User ID=sa;Password=sa"/>
     <add key="ClientSettingsProvider.ServiceUri" value=""/>
   </appSettings>
   <system.web>

@@ -468,7 +468,7 @@ Module Module1
             Next
 
             mail.Bcc.Add("songtao.li@lixil.com")
-            mail.Bcc.Add("lengqing2010@163.com")
+            mail.Bcc.Add("jichuang.han@lixil.com")
 
             mail.Subject = "[" & xi & "] GKL NG DATA " & Now.ToString("yyyy-MM-dd")
             mail.Body = txt
