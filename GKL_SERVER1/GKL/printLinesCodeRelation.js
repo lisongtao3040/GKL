@@ -352,7 +352,7 @@ function callClickOnceApp(row, chk_no, line_CD, CD, J_CD, index, kbn) {
     
     var queryString = params.join('&');
     //var appUrl = 'http://localhost:60669/APP/FmPrint/PrintLarGkl.application?' + queryString;
-    var appUrl = 'http://10.160.192.41/GKL2020/APP/FmPrint/PrintLarGkl.application?' + queryString;
+    var appUrl = 'http://10.160.192.114/GKL2020/APP/FmPrint/PrintLarGkl.application?' + queryString;
     
     // 创建隐藏的 iframe
     var iframe = document.createElement('iframe');

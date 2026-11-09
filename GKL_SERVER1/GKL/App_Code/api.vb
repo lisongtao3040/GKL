@@ -481,7 +481,7 @@ Public Class api
     Public Function WriteSerLog(ByVal user_cd As String, ByVal txt As String) As String
         'Dim logFolderPath As String = Path.Combine(Directory.GetCurrentDirectory(), "log")
 
-        Dim logFolderPath As String = "\\\\10.160.192.41\\WebShare\\GKL_LOG"
+        Dim logFolderPath As String = "\\\\10.160.192.114\\WebShare\\GKL_LOG"
 
         Dim logFilePath As String = Path.Combine(logFolderPath, user_cd & "_" & DateTime.Now.ToString("yyyyMMdd") & ".log")
 

@@ -118,7 +118,7 @@
                                 <asp:LinkButton ID="lbRelation" runat="server">关联商品与模板</asp:LinkButton><br />
 
                                 <%--           <iframe id="ifm" runat="server" width="360px" height="300px"
-                                           src="http://10.160.192.41/DWP20/GKL_CHK_MENU2.aspx?user_cd=<%%>"></iframe>--%>
+                                           src="http://10.160.192.114/DWP20/GKL_CHK_MENU2.aspx?user_cd=<%%>"></iframe>--%>
 
 
                                 <asp:LinkButton ID="lbPlan" runat="server">检查计划</asp:LinkButton><br />
