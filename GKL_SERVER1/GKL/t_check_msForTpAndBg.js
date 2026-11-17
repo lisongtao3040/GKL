@@ -419,6 +419,45 @@ $(document).ready(function () {
 
 
 
+    //COLOR检查明细
+    function AjaxPostChkScanList(chk_no, line_id, make_no) {
+
+        var rtv;
+        rtv = false;
+        $.ajax({
+            type: 'POST',
+            url: 'AJAX.aspx?kbn=ChkScanList',
+            async: false, //true:yibu
+            data: {
+                chk_no: chk_no,
+                line_id: line_id,
+                make_no: make_no
+            },
+            datatype: 'html', //'xml', 'html', 'script', 'json', 'jsonp', 'text'.
+            beforeSend: function () { },
+            //when success
+            success: function (data) {
+     
+            },
+            //when complete
+            complete: function (XMLHttpRequest, textStatus) {
+                if (XMLHttpRequest.responseText == "1") {
+                    rtv = false;
+                    return true;
+                }else{
+				    rtv = true;
+                    return true;
+				}
+
+            },
+            //when error
+            error: function () { alert('颜色检查错误'); }
+        });
+
+        return rtv;
+    }
+
+	//alert(AjaxPostChkScanList($("#hidChkNo").val(),$("#hidLineId").val(),$("#lblMake_no").text()));
     //完了按钮按下时
     $("#btnHtmlComplete").click(function () {
         //if ($('#tbx_scan_scmx').attr("scmx") == "1") {
@@ -427,6 +466,13 @@ $(document).ready(function () {
         //        return false;
         //    }
         //}
+
+		if($("#hidChkScanList").val()=="1"){
+			if(AjaxPostChkScanList($("#hidChkNo").val(),$("#hidLineId").val(),$("#lblMake_no").text())==false){
+				alert('标签检查列表，存在不正确的标签！！！');
+				return false;
+			}	
+		}
 
 
         $('#btnHtmlComplete').attr("disabled", true);

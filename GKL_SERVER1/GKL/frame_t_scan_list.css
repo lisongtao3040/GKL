@@ -1,0 +1,178 @@
+﻿@charset "utf-8";
+
+/* t_scan_list 扫描一览画面 */
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Meiryo UI", "MS UI Gothic", "Yu Gothic", Meiryo, sans-serif;
+    font-size: 13px;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+.scan-wrap {
+    padding: 6px;
+}
+
+/* 上部表示部 */
+.scan-header {
+    margin-bottom: 6px;
+}
+
+table.scan-info {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.scan-info th {
+    width: 52px;
+    padding: 4px 6px;
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+    background-color: #eef3f8;
+    border: 1px solid #b5c4d2;
+}
+
+table.scan-info td.scan-info-value {
+    padding: 4px 6px;
+    font-weight: bold;
+    word-break: break-all;
+    border: 1px solid #b5c4d2;
+}
+
+/* 扫码入力部 */
+.scan-input-panel {
+    padding: 4px 0;
+}
+
+.scan-input-label {
+    margin-right: 4px;
+}
+
+input.scan-text {
+    width: 320px;
+    height: 24px;
+    padding: 1px 3px;
+    font-size: 16px;
+    vertical-align: middle;
+    border: 1px solid #7a9cb5;
+}
+
+/* 閉じるボタン */
+td.scan-close-cell {
+    padding: 0 0 0 6px;
+    text-align: right;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+input.scan-close-button {
+    width: 64px;
+    height: 26px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* 消息表示部 */
+.scan-message-panel {
+    height: 20px;
+    padding: 2px 0;
+    line-height: 20px;
+}
+
+.scan-message {
+    font-weight: bold;
+}
+
+.scan-message-info {
+    color: #006600;
+}
+
+.scan-message-error {
+    color: #cc0000;
+}
+
+/* 一览部 */
+.scan-list-panel {
+    height: 520px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #9aa6b2;
+}
+
+table.scan-list {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+table.scan-list th {
+    padding: 4px 3px;
+    font-size: 12px;
+    font-weight: normal;
+    white-space: nowrap;
+    background-color: #cfe0f0;
+    border: 1px solid #8aa6bd;
+}
+
+table.scan-list td {
+    padding: 3px 4px;
+    font-size: 12px;
+    vertical-align: top;
+    word-break: break-all;
+    border: 1px solid #c8d5e0;
+}
+
+td.scan-col-action {
+    text-align: center;
+}
+
+/* 结果値 */
+td.scan-result {
+    text-align: center;
+    font-weight: bold;
+}
+
+td.scan-result-ok {
+    color: #006600;
+}
+
+td.scan-result-ng {
+    color: #cc0000;
+}
+
+td.scan-result-rn {
+    color: #0066cc;
+}
+
+/* NG行 */
+table.scan-list tr.scan-row-ng td {
+    background-color: #fff4f4;
+}
+
+/* データなし */
+td.scan-empty {
+    padding: 12px 0;
+    color: #888888;
+    text-align: center;
+}
+
+/* 维护ボタン */
+input.scan-maintain-button {
+    width: 52px;
+    height: 22px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* 注記 */
+.scan-note {
+    margin-top: 4px;
+    font-size: 11px;
+    color: #666666;
+}

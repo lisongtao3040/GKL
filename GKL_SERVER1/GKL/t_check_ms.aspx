@@ -19,8 +19,8 @@
     <script type="text/javascript" src="./Common.js"></script>
     <script type="text/javascript" src="./config.js?ver=144"></script>
     <%--    <script src="js/jquery-2.1.1.js"></script>--%>
-    <script language="javascript" type="text/javascript" src="./t_check_ms.aspx.js?version=22234131"></script>
-    <script language="javascript" type="text/javascript" src="./t_check_msForTpAndBg.js?version=33351"></script>
+    <script language="javascript" type="text/javascript" src="./t_check_ms.aspx.js?version=222341312"></script>
+    <script language="javascript" type="text/javascript" src="./t_check_msForTpAndBg.js?version=333512"></script>
     <script language="javascript" type="text/javascript" src="./JsBarcode.js"></script>
     <script language="javascript" type="text/javascript" src="./Qrcode.js"></script>
 
@@ -63,11 +63,16 @@
                 <iframe id="fraYXLD" width="0" height="0"></iframe>
                 <iframe id="fraWriteTxt1" width="0" height="0"></iframe>
                 <iframe id="fraWriteTxt2" width="0" height="0"></iframe>
+
                 <asp:Label ID="lblColorMark" runat="server" Text="fff" ForeColor="red"></asp:Label>
             </div>
-                 
+         
         </div>
-
+		<div id="divScanList" style="position: absolute; display: none;height:200%;width:100%;left: 0px; top: 0px; z-index: 100000; background-color: #fff">
+			<a style="font-size:30px">扫码确认列表</a>
+				<input type="button" value="关闭" id="btnClosefraScanList" style="float:right;height:30px;"/>
+                <iframe id="fraScanList" width="100%" height="100%"></iframe>
+        </div>     
 
         <div class="hujiao" id="hujiao">
 
@@ -208,6 +213,7 @@
             <div class="baogong_panel_title" id="baogong_panel_title">
                 工单：<a id="gongdan"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     数量：<asp:Label ID="lblSuu2" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
                     <input type="button" value="关闭" id="btnCloseBaogong" />
                 <input type="button" value="强制完了" id="btnQZComplete" onclick="$('#btnComplete').click()" />
 
@@ -259,6 +265,7 @@
                             &nbsp;作番：<asp:Label ID="lblMake_no" runat="server" Text="001"></asp:Label>
                             &nbsp;CODE：<asp:Label ID="lblCode" runat="server" Text="001"></asp:Label>
                             &nbsp;数量：<asp:Label ID="lblSuu" runat="server" Text=""></asp:Label>
+
                             <br />
                             &nbsp;检查者：<asp:Label ID="lblUser" runat="server" Text="001"></asp:Label>
                             <asp:Label ID="lblUserName" runat="server" Text="001"></asp:Label>
@@ -273,6 +280,7 @@
                 <tr>
 
                     <td style="text-align: right;">
+ <asp:Button ID="btnScanlist" runat="server" Text="扫码" Style="width: 80px; height: 60px; margin-left: 10px;" />
                         <asp:Label ID="lblSou" runat="server" Text="" Font-Size="32px"></asp:Label></td>
                 </tr>
             </table>
@@ -369,6 +377,7 @@
 
                 <asp:TextBox ID="hidBaogong" runat="server" class="jq_chk_id_ipt" Style="visibility: hidden;"></asp:TextBox>
                 <asp:TextBox ID="hidTuopanLines" runat="server" class="jq_chk_id_ipt" Style="visibility: hidden;"></asp:TextBox>
+                <asp:TextBox ID="hidChkScanList" runat="server" class="jq_chk_id_ipt" Style="visibility: hidden;"></asp:TextBox>
             </div>
             <div class="">
 

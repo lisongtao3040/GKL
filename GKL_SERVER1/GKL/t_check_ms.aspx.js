@@ -1123,9 +1123,34 @@ $(document).ready(function () {
     }
 
 
+	//        
 
 
+	 $("#btnClosefraScanList").click(function () {
+		$('#divScanList').hide();
+	    return false;
 
+    });
+
+	 $("#btnScanlist").click(function () {
+
+		var urlScan = [];
+		urlScan.push( "http://localhost:60669/frame_t_scan_list.aspx?");
+		urlScan.push( "chk_no="+ $("#hidChkNo").val());	
+		urlScan.push( "&line_id="+ $("#hidLineId").val());	
+		urlScan.push( "&make_no="+ $("#lblMake_no").text());
+		urlScan.push( "&code="+ $("#lblCode").text());
+
+		urlScan.push( "&user="+ $("#hidInsUser").val());	
+
+
+		
+		//chk_no=202503_9999999998_3&line_id=SRM1232A&make_no=9999999998&code=DD-5025-MBJM&user=3004532";
+		$('#divScanList').show();
+		$('#fraScanList').attr('src', '').attr('src', urlScan.join(''));                             // 2. 显示 iframe
+	    return false;
+
+    });
     //----------------------------
     // 准备按钮按下 设置【准备完了FLG】cookkie？
     //    1.把CD，NO内容登录到 m_yxld 【0.准备】

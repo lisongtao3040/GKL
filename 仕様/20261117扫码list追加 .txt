@@ -1,0 +1,80 @@
+
+创建 frame_t_scan_list 画面（这个画面是要用iframe嵌入其他画面用的），
+用来一览登录，更新 t_scan_list
+
+整个画面用AJAX来做，注意 要IE支持的AJAX，可以参照寄存代码中的AJAX做成方法。尽量新做成文件，不修改寄存文件。
+
+1.0 参数值
+	画面通过URL，可以得到 chk_no，line_id，make_no（作番），code，user 的值
+
+1.1 一览
+	只表示 scan_txt（扫码值），[result]（结果值），[upd_user]（更新者），[upd_date]（更新日），操作列。 一共5列
+	如果 result 是 NG 的时候，那么操作列表示 维护按钮 ，点击时，这条记录的 result 变成 RN
+1.2 登录
+	画面上有一个文本框，用来接受扫码值，只要扫码，就把值登录到 t_scan_list中，如果 扫码值中 的 make_no和 url的make_no一样，而且扫码值中 的 code和 url的code也一样，那么result登录OK
+	否则登录NG
+1.3 画面上部表示 make_no（作番）code（CD） user（用户）
+
+表参照：
+CREATE TABLE [dbo].[t_scan_list](
+	[scan_id] [int] IDENTITY(1,1) NOT NULL,
+	[chk_no] [varchar](20) NOT NULL,
+	[line_id] [varchar](10) NOT NULL,
+	[make_no] [varchar](20) NOT NULL,
+	[code] [varchar](30) NULL,
+	[scan_txt] [varchar](200) NULL,
+	[result] [varchar](30) NULL,
+	[upd_user] [varchar](20) NULL,
+	[upd_date] [datetime] NULL,
+	[ins_user] [varchar](20) NULL,
+	[ins_date] [datetime] NULL,
+ CONSTRAINT [PK_t_scan_list] PRIMARY KEY CLUSTERED 
+(
+	[scan_id] DESC,
+	[chk_no] ASC,
+	[line_id] ASC,
+	[make_no] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+
+
+
+http://localhost:60669/frame_t_scan_list.aspx?chk_no=202503_9999999998_3&line_id=SRM1232A&make_no=9999999998&code=DD-5025-MBJM&user=3004532
+
+画面上不要 登录和刷新按钮，但是要关闭按钮
+用户项目表示 请用 用户名（用户CD的方式）
+参照用户表：
+CREATE TABLE [dbo].[m_user](
+	[user_cd] [varchar](10) NOT NULL,
+	[line_id] [varchar](10) NULL,
+	[user_name] [nvarchar](20) NULL,
+	[user_password] [varchar](20) NULL,
+	[kengen] [char](1) NULL,
+	[ins_user] [varchar](20) NULL,
+	[ins_date] [datetime] NULL,
+	[upd_user] [varchar](20) NULL,
+	[upd_date] [datetime] NULL,
+ CONSTRAINT [PK_m_user] PRIMARY KEY CLUSTERED 
+(
+	[user_cd] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+扫码值 textbox一直保持有焦点
+一览画面根据 scan_id 倒序显示
+
+
+扫码的值是 “YY-5053-MBJB Y7261118 /C”这样的形式， 第一部分 “YY-5053-MBJB”就是code，只比较code就可以，不用比较作番了。 code比较时 去掉 "-"
+
+btnScanlist
+                <iframe id="fraScanList" width="0" height="0"></iframe>
+
+
+$("#btnScanlist")
+
+		var urlScan = "http://localhost:60669/frame_t_scan_list.aspx?chk_no=202503_9999999998_3&line_id=SRM1232A&make_no=9999999998&code=DD-5025-MBJM&user=3004532";
+		$('#divScanList').show();
+AC-5001-MBJF Y7261118 /C

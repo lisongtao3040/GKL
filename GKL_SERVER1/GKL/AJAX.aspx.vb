@@ -204,11 +204,26 @@ Partial Class AJAX
             Catch ex As Exception
 
             End Try
+        ElseIf kbn = "ChkScanList" Then
+            Dim chk_no As String = Request.Form("chk_no")
+            Dim line_id As String = Request.Form("line_id")
+            Dim make_no As String = Request.Form("make_no")
+
+            Dim BC2 As New TScanListBC()
+
+            If BC2.IsHaveNg(chk_no, line_id, make_no) = True Then
+                Response.Write("1")
+            Else
+                Response.Write("0")
+            End If
 
 
         End If
 
-        Response.End()
+
+            'AjaxPostChkScanList
+
+            Response.End()
 
     End Sub
 

@@ -52,7 +52,7 @@ public partial class t_check_ms : System.Web.UI.Page
                 this.btnMakeQR.Visible = false;
             }
 
-            
+
             if (System.Configuration.ConfigurationManager.AppSettings.Get("HuJiao_lines").ToString().IndexOf(this.hidLineId.Text) > 0)
             {
                 this.btnHujiao.Visible = true;
@@ -97,6 +97,18 @@ public partial class t_check_ms : System.Web.UI.Page
                 this.btnYXLD.Visible = false;
             }
 
+
+            if (System.Configuration.ConfigurationManager.AppSettings.Get("chk_scan_list_lines").ToString().IndexOf(this.hidLineId.Text) > 0)
+            {
+                btnScanlist.Visible = true;
+                hidChkScanList.Text = "1";
+            }
+            else
+            {
+                btnScanlist.Visible = false;
+                hidChkScanList.Text = "0";
+            }
+
             //报工系统是否打开
             BaoGongDA BaoGongDA = new BaoGongDA();
             hidBaogong.Text = "0";
@@ -138,10 +150,10 @@ public partial class t_check_ms : System.Web.UI.Page
 
             if (nr != "")
             {
-                string color = nr.Split( '|' )[0];
+                string color = nr.Split('|')[0];
                 string txt = nr.Split('|')[1];
 
-                form1.Style.Add("border", "4px "+ color + " solid");
+                form1.Style.Add("border", "4px " + color + " solid");
                 lblMake_no.Style.Add("border", "6px " + color + " solid");
                 lblColorMark.Text = txt;
             }
@@ -234,6 +246,22 @@ public partial class t_check_ms : System.Web.UI.Page
 
     protected void btnComplete_Click(object sender, EventArgs e)
     {
+
+
+        //if (System.Configuration.ConfigurationManager.AppSettings.Get("chk_scan_list_lines").ToString().IndexOf(this.hidLineId.Text) > 0)
+        //{
+
+        //    TScanListBC BC2 = new TScanListBC();
+
+        //    if (BC2.IsHaveNg(ViewState["chk_no"].ToString(), ViewState["line_id"].ToString(), ViewState["make_no"].ToString()) == true)
+        //    {
+        //        Common.ShowMsg(this.Page, "扫码列表数据存在 NG，请改正;");
+        //        return;
+        //    }
+
+        //}
+
+        //return;
 
         //更新明细数据
         TCheckMsBC BC = new TCheckMsBC();
